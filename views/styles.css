@@ -1,0 +1,16 @@
+html {
+    
+}
+
+body {
+    background: url(baggrundsbillede.png);
+}
+
+/*
+#baggrund {
+    background-repeat: repeat-y;
+    background-size: auto;
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    background-image: url(/baggrundsbillede.png);
+}
