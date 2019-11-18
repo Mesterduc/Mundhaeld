@@ -1,49 +1,25 @@
-html
-    head
-        style
-            include styles.css
-        title Mundhæld
-        link(href='//fonts.googleapis.com/css?family=Arvo' rel='stylesheet')
-        link(href='//fonts.googleapis.com/css?family=Rye' rel='stylesheet')
-        link(href='//fonts.googleapis.com/css?family=Kaushan' rel='stylesheet')
-        link(href='//fonts.googleapis.com/css?family=Cambay' rel='stylesheet')
-        link(href='//fonts.googleapis.com/css?family=Josefin' rel='stylesheet')
-        script(script='app.js')
-
-    body
-        div(id="menu")   
-            ul
-                li
-                    a(href='booking') Booking
-                li
-                    a(href='sortiment') Sortiment
-                li
-                    a(href='admin.pug') Admin
-                li 
-                    a(href="https://www.facebook.com/mundhaeld/")
-                        img(src="FBlogo.png" alt="" clas = "fb_logo")
-                        
-        div(id="logo")                
-            img(src="/logo.png" alt="")
-
-        div(class="kontakt")
-            div(class="kontakt_info")
-                div(class="kontakt_info_title")
-                    div MUNDHÆLD
-                div(class="kontakt_info_adresse")
-                    div Vestergade 51
-                    div 8000 Århus C
-                div(class="kontakt_info_åbingstider")
-                    div Åbningstider:
-                    div Tirsdag: 12.00 - 23.00
-                    div Onsdag: 12.00 - 23.00
-                    div Torsdag: 12.00 - 24.00
-                    div Fredag: 12.00 - 02.00
-                    div Lørdag: 12.00 - 02.00
-                    div Mandag: Lukket
-                    div Søndag: Lukket
-                div(class="kontakt_info_kontakt")
-                    div Kontakt:
-                    div mundhaeld@mundhaeld.dk
-                    div facebook.com/mundhaeld
-        iframe(class="fb" src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmundhaeld%2F&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId' width='5000' height='700' scrolling='no' frameborder='0' allowtransparency='true' allow='encrypted-media')
+extends ./layout
+block content             
+    div(id="logo")                
+        img(src="/logo.png" alt="")
+    div(class="kontakt")
+        div(class="kontakt_info")
+            div(class="kontakt_info_title")
+                div MUNDHÆLD
+            div(class="kontakt_info_adresse")
+                div Vestergade 51
+                div 8000 Århus C
+            div(class="kontakt_info_åbingstider")
+                div Åbningstider:
+                div Tirsdag: 12.00 - 23.00
+                div Onsdag: 12.00 - 23.00
+                div Torsdag: 12.00 - 24.00
+                div Fredag: 12.00 - 02.00
+                div Lørdag: 12.00 - 02.00
+                div Mandag: Lukket
+                div Søndag: Lukket
+            div(class="kontakt_info_kontakt")
+                div Kontakt:
+                div mundhaeld@mundhaeld.dk
+                div facebook.com/mundhaeld
+    iframe(class="fb" src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmundhaeld%2F&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId' width='5000' height='700' scrolling='no' frameborder='0' allowtransparency='true' allow='encrypted-media')
