@@ -9,6 +9,12 @@ app.get('forside', (req, res) => {
 })
 */
 
+const bookingRouter = require('./routes/booking.js')
+app.use('', bookingRouter)
+
+const sortimentRouter = require('./routes/sortiment.js')
+app.use('', sortimentRouter)
+
 const forsideRouter = require('./routes/forside')
 app.use('', forsideRouter)
 app.use(express.static('public'))
