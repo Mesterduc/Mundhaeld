@@ -40,7 +40,6 @@ li, li a {
 
 .kontakt {
     text-align: center;
-    color: lightgrey;
   }
    
   .kontakt_info_title {
@@ -64,14 +63,4 @@ li, li a {
     margin-right: auto;
     width: 500;
     align-items: center;
-}
-
-.textnormal {
-    font-family: "Arvo", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
-    font-style: normal;
-    font-size: 30px;
-    font-weight: normal;
-    text-decoration: none;
-    color: rgba(217,217,217,1);
-    letter-spacing: normal;
 }
