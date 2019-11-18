@@ -1,12 +1,20 @@
 body {
     margin-top: 0%;
+    background-image: url('/back.png');
+    font-family: "Arvo", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
+    font-style: normal;
+    font-size: 15px;
+    font-weight: normal;
+    text-decoration: none;
+    color: rgba(217,217,217,1);
+    letter-spacing: normal;
 }
 
 #logo {
     display: block;
-    margin-left: 50%;
+    margin-left: 43%;
     margin-right: auto;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 #menu {
@@ -17,6 +25,7 @@ body {
     text-align: center;
     color: lightgray;
 }
+
 
 li, li a {
     display: inline;

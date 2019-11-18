@@ -9,28 +9,23 @@ html
         link(href='//fonts.googleapis.com/css?family=Cambay' rel='stylesheet')
         link(href='//fonts.googleapis.com/css?family=Josefin' rel='stylesheet')
         script(script='app.js')
-    style.
-        body {
-            background-image: url('/back.png');
-            font-family: "Arvo", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
-            font-style: normal;
-            font-size: 30px;
-            font-weight: normal;
-            text-decoration: none;
-            color: rgba(217,217,217,1);
-            letter-spacing: normal;
-        }
-    ul
-        li
-            a(href='booking.pug') Booking
-        li
-            a(href='sortiment.pug') Sortiment
-        li
-            a(href='admin.pug') Admin
-        li 
-            a(href="https://www.facebook.com/mundhaeld/")
-                img(src="FBlogo.png" alt="" clas = "fb_logo")
-        img(src="/logo.png" alt="" class="logo")
+
+    body
+        div(id="menu")   
+            ul
+                li
+                    a(href='booking.pug') Booking
+                li
+                    a(href='sortiment.pug') Sortiment
+                li
+                    a(href='admin.pug') Admin
+                li 
+                    a(href="https://www.facebook.com/mundhaeld/")
+                        img(src="FBlogo.png" alt="" clas = "fb_logo")
+                        
+        div(id="logo")                
+            img(src="/logo.png" alt="")
+
         div(class="kontakt")
             div(class="kontakt_info")
                 div(class="kontakt_info_title")
