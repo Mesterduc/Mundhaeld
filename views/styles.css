@@ -12,12 +12,9 @@ img.logo {
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding-top: 40px;
     float: none;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
     color: lightgray;
 }
 
@@ -29,4 +26,42 @@ li, li a {
     font-weight: bold;
     font-size: 30px;
     text-decoration: none;
+}
+
+.kontakt {
+    text-align: center;
+    color: lightgrey;
+  }
+   
+  .kontakt_info_title {
+    margin-top: 20;
+    margin-bottom: 20;
+  }
+   
+  .kontakt_info_adresse {
+    margin-bottom: 20;
+  }
+  .kontakt_info_åbingstider {
+    margin: 20;
+  }
+  .kontakt_info_kontakt {
+    margin-bottom: 20;
+  }
+
+.fb {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500;
+    align-items: center;
+}
+
+.textnormal {
+    font-family: "Arvo", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
+    font-style: normal;
+    font-size: 30px;
+    font-weight: normal;
+    text-decoration: none;
+    color: rgba(217,217,217,1);
+    letter-spacing: normal;
 }
