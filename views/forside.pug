@@ -8,15 +8,17 @@ html
         body {
             background-image: url('/back.png');
         }
-    ul
-        li
-            a(href='booking.pug') Booking
-        li
-            a(href='sortiment.pug') Sortiment
-        li
-            a(href='admin.pug') Admin
-        li 
-            a(href="https://www.facebook.com/mundhaeld/")
-                img(src="FBlogo.png" alt="" clas = "fb_logo")
-
-        img(src="/logo.png" alt="" class="logo")
+    body
+        div(id="menu")   
+            ul
+                li
+                    a(href='booking.pug') Booking
+                li
+                    a(href='sortiment.pug') Sortiment
+                li
+                    a(href='admin.pug') Admin
+                li 
+                    a(href="https://www.facebook.com/mundhaeld/")
+                        img(src="FBlogo.png" alt="" clas = "fb_logo")
+        div(id="logo")
+            img(src="/logo.png" alt="" class="logo")
