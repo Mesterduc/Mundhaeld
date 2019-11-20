@@ -70,3 +70,38 @@ li, li a {
     width: 500;
     align-items: center;
 }
+
+ /*--------------------- Booking -------------------------*/
+.grid-container{
+    display: grid;
+    /* grid-template-columns: 10% 40% 40% 10%;  */
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows:  1fr 1fr;
+    /* border: 2px solid green; */
+    text-align: center;
+}
+.grid-container p {
+  margin-bottom: 5px;
+}
+
+
+.grid-container value{
+  color: red;
+}
+.grid-container-info{
+  /* border: 2px solid green; */
+  grid-column-start: 2;
+
+}
+.grid-container-info2{
+  /* border: 2px solid green; */
+  grid-column-start: 3;
+}
+.grid-container-send{
+  /* border: 2px solid green; */
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+

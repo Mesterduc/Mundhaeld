@@ -13,24 +13,28 @@ body
     //- Menu bar
     - var current = "Booking"
     include template/nav
-    
+
     form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
-        p Navn:
-        input(type='text' name='firstname')
-        p Email:
-        input(type='text' name='email')
-        p Telefonnummer:
-        input(type='text' name='telefonnummer')
-        p Antal pers:
-        input(type='text' name='antalpers')
-        p Beskrivelse:
-        input(type='text' name='beskrivelse')
-        p Dato:
-        input#datepicker(v-model='newDate' )
-        p Tidspunkt:
-        select#timepicker(name="timepicker")
-            each val in ['12-14', '14-16', '16-18', '18-20', '20-22', '22-00']
-                option=val
-        br
-        br
-        input(type='submit' value='Send')
+        div(class="grid-container")
+            //- form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
+            div(class="grid-container-info")
+                p Navn:
+                input(type='text' name='firstname' placeholder="Navn")
+                p Email:
+                input(type='text' name='email' placeholder="Email")
+                p Telefon nr:
+                input(type='text' name='telefonnummer' placeholder="Nr.")
+                p Antal person:
+                input(type='text' name='antalperson' placeholder="Antal")
+            //- input(type='text' name='beskrivelse')
+            div(class="grid-container-info2")
+                p Beskrivelse:
+                textarea(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?                        F.eks. Øl smagning, Julefrokost, bord bestilling osv.                                       Andre spørgsmål?                                                sd")
+                p Dato:
+                input#datepicker(v-model='newDate' placeholder="Vælge dato" )
+                p Tidspunkt:
+                select#timepicker(name="timepicker")
+                    each val in ['12-14', '14-16', '16-18', '18-20', '20-22', '22-00']
+                        option=val
+            div(class="grid-container-send")
+                input(type='submit' value='Send')
