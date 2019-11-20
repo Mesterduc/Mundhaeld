@@ -1,5 +1,9 @@
-extends ./layout
-block content             
+extends template/layout
+block content   
+    //- Menu bar
+    - var current = "Forside"
+    include template/nav
+
     div(id="logo")                
         img(src="/logo.png" alt="")
     div(class="kontakt")

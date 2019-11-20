@@ -1,4 +1,4 @@
-include ./layout
+include template/layout
 
 block content
 head
@@ -10,6 +10,10 @@ head
         $("#datepicker").datepicker();
         } )
 body
+    //- Menu bar
+    - var current = "Booking"
+    include template/nav
+    
     form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
         p Navn:
         input(type='text' name='firstname')

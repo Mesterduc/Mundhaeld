@@ -27,7 +27,10 @@ body {
 }
 
 #menu a:hover {
-  color: #800000;
+    color: #800000;
+}
+.active{
+    color: #800000;
 }
 
 li, li a {
