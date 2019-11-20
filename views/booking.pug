@@ -1,17 +1,29 @@
 include ./layout
 
 block content
-form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
-    p navn:
-    input(type='text' name='firstname')
-    p Email:
-    input(type='text' name='email')
-    p Telefonnummer:
-    input(type='text' name='telefonnummer')
-    p Antal pers:
-    input(type='text' name='antalpers')
-    p Beskrivelse:
-    input(type='text' name='beskrivelse')
-    br
-    br
-    input(type='submit' value='Send')
+head
+    link(rel='stylesheet' href='//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css')
+    script(src='https://code.jquery.com/jquery-1.12.4.js')
+    script(src='https://code.jquery.com/ui/1.12.0/jquery-ui.js')
+    script.
+        $(function() {
+        $("#datepicker").datepicker();
+        } )
+body
+    form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
+        p navn:
+        input(type='text' name='firstname')
+        p Email:
+        input(type='text' name='email')
+        p Telefonnummer:
+        input(type='text' name='telefonnummer')
+        p Antal pers:
+        input(type='text' name='antalpers')
+        p Beskrivelse:
+        input(type='text' name='beskrivelse')
+        p Dato:
+        input#datepicker(v-model='newDate' )
+
+        br
+        br
+        input(type='submit' value='Send')
