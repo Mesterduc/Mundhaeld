@@ -26,6 +26,9 @@ body {
     color: lightgray;
 }
 
+#menu a:hover {
+  color: #800000;
+}
 
 li, li a {
     display: inline;
