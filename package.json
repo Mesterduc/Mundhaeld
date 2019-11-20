@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MatiasLauridsen/mundhaeld#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "js-datepicker": "^5.2.1",
     "pug": "^2.0.4"
   }
 }
