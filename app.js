@@ -6,7 +6,7 @@ const pug = require('pug')
 //mongodb opsætning
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://dbNissen:<password>@mundhaeld-nshjk.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://dbNissen:bajer123@mundhaeld-nshjk.mongodb.net/test?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useCreateIndex: true,
   autoIndex: false,
