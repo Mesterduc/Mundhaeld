@@ -64,3 +64,13 @@ li, li a {
     width: 500;
     align-items: center;
 }
+
+#bookingform{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#timepicker {
+  padding-right: 100px;
+}
