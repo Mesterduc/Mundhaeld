@@ -1,0 +1,15 @@
+mixin navLink(link, name)
+    li
+        a(
+            href=link
+            class={active: name === current}
+        ) #{name}
+
+ul(id="menu") 
+    +navLink("forside", "Forside")
+    +navLink("booking", "Booking")
+    +navLink("sortiment", "Sortiment")
+    +navLink("admin", "Admin")
+    li 
+        a(href="https://www.facebook.com/mundhaeld/")
+            img(src="FBlogo.png" alt="" clas = "fb_logo")

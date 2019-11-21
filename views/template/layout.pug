@@ -1,7 +1,7 @@
 html
     head
         style
-            include styles.css
+            include ../styles.css
         title Mundhæld
         link(rel='icon' href='/logo.png' type='image/x-icon')
         link(href='//fonts.googleapis.com/css?family=Arvo' rel='stylesheet')
@@ -12,17 +12,4 @@ html
         script(script='app.js')
 
     body
-        div(id="menu")   
-            ul
-                li 
-                    a(href='forside') Forside
-                li
-                    a(href='booking') Booking
-                li
-                    a(href='sortiment') Sortiment
-                li
-                    a(href='admin.pug') Admin
-                li 
-                    a(href="https://www.facebook.com/mundhaeld/")
-                        img(src="FBlogo.png" alt="" clas = "fb_logo")
         block content
