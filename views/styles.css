@@ -71,6 +71,15 @@ li, li a {
     align-items: center;
 }
 
+#bookingform{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#timepicker {
+  padding-right: 100px;
+}
  /*--------------------- Booking -------------------------*/
 .grid-container{
     display: grid;

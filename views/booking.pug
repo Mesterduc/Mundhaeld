@@ -34,7 +34,7 @@ body
                 input#datepicker(v-model='newDate' placeholder="Vælge dato" )
                 p Tidspunkt:
                 select#timepicker(name="timepicker")
-                    each val in ['12-14', '14-16', '16-18', '18-20', '20-22', '22-00']
+                    each val in tid
                         option=val
             div(class="grid-container-send")
                 input(type='submit' value='Send')
