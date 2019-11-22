@@ -1,8 +1,14 @@
 extends template/layout
 
 block content
-    //- Menu bar
-    - var current = "Sortiment"
-    include template/nav
-    
+    head
+    body
+        //- Menu bar
+        - var current = "Sortiment"
+        include template/nav
+
+        ul
+            //- each product in products
+            //-     li: product
+            
 
