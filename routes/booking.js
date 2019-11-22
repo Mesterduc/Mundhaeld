@@ -8,54 +8,66 @@ router.get('/booking', (req, res) => {
 })
 
 
-router.post('/booking', (req, res) => {
-  res.send('booking', {tid : tidspunkter})
+router.post('', (req, res) => {
+  sendmail().catch().then(console.log(Error)),
+  readInputs(),
+  res.render('booking', {tid: tidspunkter})
+  
 })
 module.exports = router;
 
 
-//Tidsvælger
+//-------- Tidsvælger
 const tidspunkter = ['12-14', '14-16','16-18','18-20','20-22','22-00','00-02']
+let navn;;
+let email;
+let telefon;
+let antal;
+let beskrivelse;
+let dato;
+let tidspunkt;
 
+function readInputs(){
+  navn = document.getElementById('bName')
+  email = document.getElementById('bEmail')
+  telefon = document.getElementById('bPhone')
+  antal = document.getElementById('bPersons')
+  beskrivelse = document.getElementById('bComment')
+  dato = document.getElementById('datepicker')
+  tidspunkt = document.getElementById('timepicker')
+
+}
 
 //-------- SMTP Mails
-// async..await is not allowed in global scope, must use a wrapper
 async function sendmail() {
-    // Generate test SMTP service account from ethereal.email
-    // Only needed if you don't have a real mail account for testing
-  //   let testAccount = await nodemailer.createTestAccount();
   
-    // create reusable transporter object using the default SMTP transport
-    let transporter = await nodemailer.createTransport({
-    //host: "smtp.gmail.com",
+  // skaber genbruglig transportør-object med SMTP transport
+  let transporter = await nodemailer.createTransport({
+    
     service: 'gmail',
       port: 587,
-      secure: true, // true for 465, false for other ports
+      secure: true, // sand for port 465, falsk for anden port
       auth: {
-        user: 'mundhaelddeveloper@gmail.com', // generated ethereal user
-        pass: 'lkbsomdrnbnqvzos' // generated ethereal password
+        user: 'mundhaelddeveloper@gmail.com', 
+        pass: 'lkbsomdrnbnqvzos' 
       },
       tls:{
           rejectUnauthorized:false,
-//          secureProtocol: "TLSv1_method"
-
       }
     });
   
-    // send mail with defined transport object
-    let info = transporter.sendMail({
-      from: '"Kevin" <mundhaelddeveloper@gmail.com>', // sender address
+    // send mail med specificeret transport-object
+    let ctb = transporter.sendMail({
+      from: `"${navn}" <${email}>`, // sender address
       to: "kevinjoergensen@outlook.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
+      subject: `Reservation - d: ${dato} kl: ${tidspunkt}`, // Subject line
+      text: `${beskrivelse} ${antal} ${telefon}`, // plain text body
       html: "<b>Hello world?</b>" // html body
     });
   
-    console.log("Message sent: yabitch");
+    console.log(`Message sent to: ${ctb.to}`);
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
   
-    
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
-sendmail().then().catch(console.log('lort'))
+

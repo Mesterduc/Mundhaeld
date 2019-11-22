@@ -5,7 +5,7 @@ head
     link(rel='stylesheet' href='//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css')
     script(src='https://code.jquery.com/jquery-1.12.4.js')
     script(src='https://code.jquery.com/ui/1.12.0/jquery-ui.js')
-    script(src='smtp.js')
+    script(src="booking.js")
     script.
         $(function() {
         $("#datepicker").datepicker();
@@ -15,22 +15,21 @@ body
     - var current = "Booking"
     include template/nav
 
-    form(action="" method="post" enctype="text/plain")
+    form(action="" method="post")
         div(class="grid-container")
-            //- form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
             div(class="grid-container-info")
                 p Navn:
-                input(type='text' name='firstname' placeholder="Navn")
+                input#bName(type='text' name='firstname' placeholder="Navn")
                 p Email:
-                input(type='text' name='email' placeholder="Email")
+                input#bEmail(type='text' name='email' placeholder="Email")
                 p Telefon nr:
-                input(type='text' name='telefonnummer' placeholder="Nr.")
+                input#bPhone(type='text' name='telefonnummer' placeholder="Nr.")
                 p Antal person:
-                input(type='text' name='antalperson' placeholder="Antal")
+                input#bPersons(type='text' name='antalperson' placeholder="Antal")
             //- input(type='text' name='beskrivelse')
             div(class="grid-container-info2")
                 p Beskrivelse:
-                textarea(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?                        F.eks. Øl smagning, Julefrokost, bord bestilling osv.                                       Andre spørgsmål?                                                sd")
+                textarea#bComment(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?                        F.eks. Øl smagning, Julefrokost, bord bestilling osv.                                       Andre spørgsmål?                                                sd")
                 p Dato:
                 input#datepicker(v-model='newDate' placeholder="Vælge dato" )
                 p Tidspunkt:
@@ -38,4 +37,4 @@ body
                     each val in tid
                         option=val
             div(class="grid-container-send")
-                input(type='submit' value='Send')
+                input(type='submit' value='send')
