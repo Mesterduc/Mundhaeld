@@ -5,6 +5,7 @@ head
     link(rel='stylesheet' href='//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css')
     script(src='https://code.jquery.com/jquery-1.12.4.js')
     script(src='https://code.jquery.com/ui/1.12.0/jquery-ui.js')
+    script(src='smtp.js')
     script.
         $(function() {
         $("#datepicker").datepicker();
@@ -14,7 +15,7 @@ body
     - var current = "Booking"
     include template/nav
 
-    form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
+    form(action="" method="post" enctype="text/plain")
         div(class="grid-container")
             //- form(action="MAILTO:benja97@live.dk" method="post" enctype="text/plain")
             div(class="grid-container-info")
