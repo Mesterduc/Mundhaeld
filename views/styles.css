@@ -78,7 +78,8 @@ li, li a {
 }
 
 #timepicker {
-  padding-right: 100px;
+  /*padding-right: 100px;*/
+  width: 150px;
 }
  /*--------------------- Booking -------------------------*/
 .grid-container{

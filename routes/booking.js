@@ -18,7 +18,7 @@ module.exports = router;
 
 
 //-------- Tidsvælger
-const tidspunkter = ['12-14', '14-16','16-18','18-20','20-22','22-00','00-02']
+const tidspunkter = ['Middag (12 - 16)', 'Eftermiddag (16 - 20)', 'Aften (20 - 02)']
 let navn;;
 let email;
 let telefon;
