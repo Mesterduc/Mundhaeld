@@ -32,8 +32,12 @@ body
                 textarea#bComment(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?                        F.eks. Øl smagning, Julefrokost, bord bestilling osv.                                       Andre spørgsmål?                                                sd")
                 p Dato:
                 input#datepicker(v-model='newDate' placeholder="Vælge dato" )
-                p Tidspunkt:
-                select#timepicker(name="timepicker")
+                p Starttidspunkt:
+                select#timepicker(name="starttimepicker")
+                    each val in tid
+                        option=val
+                p Sluttidspunkt:
+                select#timepicker(name="sluttimepicker")
                     each val in tid
                         option=val
             div(class="grid-container-send")

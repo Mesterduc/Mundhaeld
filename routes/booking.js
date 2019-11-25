@@ -18,14 +18,16 @@ module.exports = router;
 
 
 //-------- Tidsvælger
-const tidspunkter = ['Middag (12 - 16)', 'Eftermiddag (16 - 20)', 'Aften (20 - 02)']
-let navn;;
+const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02']
+let navn;
 let email;
 let telefon;
 let antal;
 let beskrivelse;
 let dato;
-let tidspunkt;
+let starttidspunkt;
+let sluttidspunkt;
+
 
 function readInputs(){
   navn = document.getElementById('bName')
@@ -34,7 +36,8 @@ function readInputs(){
   antal = document.getElementById('bPersons')
   beskrivelse = document.getElementById('bComment')
   dato = document.getElementById('datepicker')
-  tidspunkt = document.getElementById('timepicker')
+  starttidspunkt = document.getElementById('starttimepicker')
+  sluttidspunkt = document.getElementById('sluttimepicker')
 
 }
 
@@ -60,7 +63,7 @@ async function sendmail() {
     let ctb = transporter.sendMail({
       from: `"${navn}" <${email}>`, // sender address
       to: "kevinjoergensen@outlook.com", // list of receivers
-      subject: `Reservation - d: ${dato} kl: ${tidspunkt}`, // Subject line
+      subject: `Reservation - d: ${dato} kl: ${starttidspunkt} til kl: ${sluttidspunkt}`, // Subject line
       text: `${beskrivelse} ${antal} ${telefon}`, // plain text body
       html: "<b>Hello world?</b>" // html body
     });
