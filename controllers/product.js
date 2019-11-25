@@ -1,5 +1,4 @@
 const Product = require('../models/product')
-const Schema = require('mongoose').Schema
 
 exports.createProduct = function(){
 
@@ -17,3 +16,12 @@ exports.getProduct = function(productID){
         if(err) return handleError(err)
     })
 }
+exports.getCompanies = function() {
+    Product.find({name: "hej"}, function(err, arr) {
+        console.log("fuck")
+    });
+  };
+
+exports.getProdukt = async function() {
+    return await Product.find({}).exec();
+  };
