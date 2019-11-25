@@ -14,6 +14,9 @@ mongoose.connect("mongodb+srv://dbNissen:bajer123@mundhaeld-nshjk.mongodb.net/te
 });
 
 // Routes
+const adminRouter = require('./routes/admin.js')
+app.use('', adminRouter)
+
 const bookingRouter = require('./routes/booking.js')
 app.use('', bookingRouter)
 
