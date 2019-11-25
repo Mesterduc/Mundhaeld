@@ -7,22 +7,23 @@ block content
     include template/nav
 
     div(class="container")
-        each pro in product
+        each p in product
             ul(class="container_product")
                 img(src="/logo.png" alt="" class="container_product_billede")
+                //- img(class="container_product_billede")= pro.billede
                 div(class="container_product_indhold")
                     div(class="hej")
-                        li= pro.name
-                div
-                    li= pro.alcoholP
+                        li= p.name
+                div(class="product_indhold")
+                    li= p.alcoholP
                         |  %
                     br
-                    li= pro.price 
-                        |kr 
+                    li= p.price 
+                        |kr. 
                     br
                 div(class="container_product_beskrivelse")
                     li Beskrivelse
                     div(class="container_product_beskrivelse_indhold")
-                        p= pro.desciption
+                        p= p.desciption
             
 

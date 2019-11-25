@@ -110,28 +110,21 @@ li, li a {
 
 .container {
   margin-top: 20px;
-  grid-template-columns: 1fr 2fr 1fr; 
-  display: grid;
-  text-align: center;
-  
+  text-align: center; 
 }
 .container li {
   font-size: 18px;
 }
 .container_product {
   grid-template-columns: 1fr 1fr 1fr 1fr; 
-  /* border: 2px solid green; */
   grid-column-start: 2;
   display:inline-grid;
+  width: 1000px;
+  text-align: left;
 }
 .container_product_billede {
   width: 70px;
   height: 70px;
-}
-.hej{
-  white-space: nowrap;
-  text-align: left;
-  /* border: 2px solid greenyellow; */
 }
 .container_product_beskrivelse li {
   font-size: 15px;
