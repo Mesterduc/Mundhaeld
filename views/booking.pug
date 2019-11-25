@@ -15,7 +15,7 @@ body
     - var current = "Booking"
     include template/nav
 
-    form(action="" method="post")
+    form(action="/booking" method="post")
         div(class="grid-container")
             div(class="grid-container-info")
                 p Navn:
@@ -38,7 +38,7 @@ body
                         option=val
                 p Sluttidspunkt:
                 select#timepicker(name="sluttimepicker")
-                    each val in tid
+                    each val in sluttid
                         option=val
             div(class="grid-container-send")
                 input(type='submit' value='send')
