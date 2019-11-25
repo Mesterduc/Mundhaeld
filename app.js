@@ -11,7 +11,7 @@ mongoose.connect("mongodb+srv://dbNissen:bajer123@mundhaeld-nshjk.mongodb.net/te
   useCreateIndex: true,
   autoIndex: false,
   useUnifiedTopology: true
-});
+}).catch(error => handleError(error));
 
 // Routes
 const adminRouter = require('./routes/admin.js')

@@ -24,14 +24,14 @@ body
                 input#bEmail(type='text' name='email' placeholder="Email")
                 p Telefon nr:
                 input#bPhone(type='text' name='telefonnummer' placeholder="Nr.")
-                p Antal person:
-                input#bPersons(type='text' name='antalperson' placeholder="Antal")
+                p Antal personer:
+                input#bPersons(type='number' name='antalperson' placeholder="Antal")
             //- input(type='text' name='beskrivelse')
             div(class="grid-container-info2")
                 p Beskrivelse:
-                textarea#bComment(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?                        F.eks. Øl smagning, Julefrokost, bord bestilling osv.                                       Andre spørgsmål?                                                sd")
+                textarea#bComment(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?\nF.eks. ølsmagning, julefrokost eller bordbestilling osv.\nAndre spørgsmål?")
                 p Dato:
-                input#datepicker(v-model='newDate' placeholder="Vælge dato" )
+                input#datepicker(v-model='newDate' placeholder="Vælg dato" )
                 p Starttidspunkt:
                 select#timepicker(name="starttimepicker")
                     each val in tid
@@ -41,4 +41,4 @@ body
                     each val in sluttid
                         option=val
             div(class="grid-container-send")
-                input(type='submit' value='send')
+                input(type='submit' value='Send')
