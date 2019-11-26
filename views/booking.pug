@@ -1,25 +1,16 @@
-include template/layout
+extends template/layout
 
 block content
-head
-    link(rel='stylesheet' href='//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css')
-    script(src='https://code.jquery.com/jquery-1.12.4.js')
-    script(src='https://code.jquery.com/ui/1.12.0/jquery-ui.js')
-    script(src="booking.js")
-    script.
-        $(function() {
-        $("#datepicker").datepicker();
-        } )
-body
+
     //- Menu bar
-    - var current = "Booking"
-    include template/nav
+    //- var current = "Booking"
+    //-include template/nav
 
     form(action="/booking" method="post")
         div(class="grid-container")
             div(class="grid-container-info")
                 p Navn:
-                input#bName(type='text' name='firstname' placeholder="Navn")
+                input#bName(placeholder="Navn")
                 p Email:
                 input#bEmail(type='text' name='email' placeholder="Email")
                 p Telefon nr:

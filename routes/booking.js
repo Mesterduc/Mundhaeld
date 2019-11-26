@@ -15,8 +15,8 @@ router.get('/booking', (req, res) => {
 })
 
 router.post('/booking', (req, res) => {
-  sendmail().catch().then(console.log(Error)),
   readInputs(),
+  sendmail().catch().then(console.log(Error)),
   res.render('booking', {tid: tidspunkter, sluttid: sluttidspunkter})
   //res.render('booking', {sluttid: sluttidspunkter})
 })
@@ -27,7 +27,7 @@ module.exports = router;
 //-------- Tidsvælger
 const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02']
 let sluttidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
-let navn;
+let navn ="";
 let email;
 let telefon;
 let antal;
@@ -48,17 +48,17 @@ function ændreTid() {
 
 //ændreTid()
 
-
 function readInputs(){
-  navn = window.document.getElementById('bName').innerHTML;
-  email = document.getElementById('bEmail')
-  telefon = document.getElementById('bPhone')
-  antal = document.getElementById('bPersons')
-  beskrivelse = document.getElementById('bComment')
-  dato = document.getElementById('datepicker')
-  tidspunkt = document.getElementById('timepicker')
+  navn = window.document.getElementById("bName").
+  email = window.document.getElementById('bEmail')
+  telefon = window.document.getElementById('bPhone')
+  antal = window.document.getElementById('bPersons')
+  beskrivelse = window.document.getElementById('bComment')
+  dato = window.document.getElementById('datepicker')
+  tidspunkt = window.document.getElementById('timepicker')
 
 }
+
 
 //-------- SMTP Mails
 async function sendmail() {
@@ -84,7 +84,7 @@ async function sendmail() {
       to: "kevinjoergensen@outlook.com", // list of receivers
       subject: `Reservation - d: ${dato} kl: ${tidspunkt}`, // Subject line
       text: `${beskrivelse} ${antal} ${telefon}`, // plain text body
-      html: "<b>Hello world?</b>" // html body
+      html: `<b>Hello world?</b> ${navn}` // html body
     });
   
     console.log(`Message sent to: ${ctb.to}`);
