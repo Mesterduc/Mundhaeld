@@ -3,8 +3,8 @@ extends template/layout
 block content
 
     //- Menu bar
-    //- var current = "Booking"
-    //-include template/nav
+    - var current = "Booking"
+    include template/nav
 
     form(action="/booking" method="post")
         div(class="grid-container")

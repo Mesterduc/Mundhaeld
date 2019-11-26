@@ -5,19 +5,20 @@ block content
     //- Menu bar
     - var current = "Admin"
     include template/nav
-
-    br
-    h2 Opret produkt
-    form#productForm(action='../controllers/product')
-    p Produkt navn
-    input#name(type='text' name='name')
-    p Alkohol %
-    input#alcoholP(type='text' name='alcoholP')
-    p Pris
-    input#price(type='text' name='price')
-    p Beskrivelse
-    input#desciption(type='text' name='desciption')
-    br
-    br
-    input(type='submit' value='Opret')
+    
+    body
+        br
+        h2 Opret produkt
+        form#form(action="/admin" method='POST')
+            p Produkt navn
+            input#name(type='text' name="name")
+            p Alkohol %
+            input#alcoholP(type='text' name='alcoholP')
+            p Pris
+            input#price(type='text' name='price')
+            p Beskrivelse
+            textarea#desciption(type='text' name='desciption' cols="30", rows="5")
+            br
+            br
+            input(type='Submit' value='Opret')
 

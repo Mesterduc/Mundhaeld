@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express()
+const pug = require('pug')
 app.set('view engine', 'pug')
 app.use(express.json())
-const pug = require('pug')
+
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 //mongodb opsætning
 const mongoose = require("mongoose");
