@@ -15,8 +15,8 @@ router.get('/booking', (req, res) => {
 })
 
 router.post('/booking', (req, res) => {
-  readInputs(),
-  sendmail().catch().then(console.log(Error)),
+  
+  sendmail(),
   res.render('booking', {tid: tidspunkter, sluttid: sluttidspunkter})
   //res.render('booking', {sluttid: sluttidspunkter})
 })
@@ -28,11 +28,11 @@ module.exports = router;
 const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02']
 let sluttidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
 let navn ="";
-let email;
-let telefon;
-let antal;
-let beskrivelse;
-let dato;
+let email = "";
+let telefon = "";
+let antal = "";
+let beskrivelse = "";
+let dato ="";
 let starttidspunkt;
 let sluttidspunkt;
 //document.getElementsByName('starttidspunkt').selectedIndex
@@ -49,13 +49,13 @@ function ændreTid() {
 //ændreTid()
 
 function readInputs(){
-  navn = window.document.getElementById("bName").
-  email = window.document.getElementById('bEmail')
-  telefon = window.document.getElementById('bPhone')
-  antal = window.document.getElementById('bPersons')
-  beskrivelse = window.document.getElementById('bComment')
-  dato = window.document.getElementById('datepicker')
-  tidspunkt = window.document.getElementById('timepicker')
+  navn = window.document.getElementById("bName");
+  email = window.document.getElementById('bEmail');
+  telefon = window.document.getElementById('bPhone');
+  antal = window.document.getElementById('bPersons');
+  beskrivelse = window.document.getElementById('bComment');
+  dato = window.document.getElementById('datepicker');
+  tidspunkt = window.document.getElementById('timepicker');
 
 }
 
@@ -82,7 +82,7 @@ async function sendmail() {
     let ctb = transporter.sendMail({
       from: `"${navn}" <${email}>`, // sender address
       to: "kevinjoergensen@outlook.com", // list of receivers
-      subject: `Reservation - d: ${dato} kl: ${tidspunkt}`, // Subject line
+      subject: `Reservation - d: ${dato}`, // Subject line
       text: `${beskrivelse} ${antal} ${telefon}`, // plain text body
       html: `<b>Hello world?</b> ${navn}` // html body
     });
