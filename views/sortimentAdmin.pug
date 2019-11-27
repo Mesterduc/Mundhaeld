@@ -21,12 +21,15 @@ block content
                     li= p.price 
                         |kr. 
                     br
+                    li= p._id
                 div(class="container_product_beskrivelse")
                     li Beskrivelse
                     div(class="container_product_beskrivelse_indhold")
                         p= p.desciption
                 div(class="container_product_slet")
-                    img(src="/trash.png" alt="alt" )
-                    img(src="/redigere.png" alt="alt")
+                    //- form(action="/admin/" method="delete")
+                    a(href="/admin2" + p._id): img(src="/trash.png", alt="alt")
+                    a(href="/admin2" + p._id): img(src="/redigere.png", alt="alt")
+
             
 
