@@ -10,7 +10,7 @@ block content
         div(class="grid-container")
             div(class="grid-container-info")
                 p Navn:
-                input#bName(placeholder="Navn")
+                input#bName(placeholder="Navn" name="MitNavn")
                 p Email:
                 input#bEmail(type='text' name='email' placeholder="Email")
                 p Telefon nr:
@@ -22,7 +22,7 @@ block content
                 p Beskrivelse:
                 textarea#bComment(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?\nF.eks. ølsmagning, julefrokost eller bordbestilling osv.\nAndre spørgsmål?")
                 p Dato:
-                input#datepicker(v-model='newDate' placeholder="Vælg dato" )
+                input#datepicker(v-model='newDate' name="dato" placeholder="Vælg dato" )
                 p Starttidspunkt:
                 select#timepicker(name="starttimepicker")
                     each val in tid

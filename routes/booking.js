@@ -15,7 +15,13 @@ router.get('/booking', (req, res) => {
 })
 
 router.post('/booking', (req, res) => {
-  
+  navn = req.body.MitNavn
+  email = req.body.email
+  telefon = req.body.telefonnummer
+  antal = req.body.antalperson
+  beskrivelse = req.body.beskrivelse
+  dato = req.body.dato
+
   sendmail(),
   res.render('booking', {tid: tidspunkter, sluttid: sluttidspunkter})
   //res.render('booking', {sluttid: sluttidspunkter})
@@ -46,19 +52,6 @@ function ændreTid() {
   }
 }
 
-//ændreTid()
-
-function readInputs(){
-  navn = window.document.getElementById("bName");
-  email = window.document.getElementById('bEmail');
-  telefon = window.document.getElementById('bPhone');
-  antal = window.document.getElementById('bPersons');
-  beskrivelse = window.document.getElementById('bComment');
-  dato = window.document.getElementById('datepicker');
-  tidspunkt = window.document.getElementById('timepicker');
-
-}
-
 
 //-------- SMTP Mails
 async function sendmail() {
@@ -87,7 +80,7 @@ async function sendmail() {
       html: `<b>Hello world?</b> ${navn}` // html body
     });
   
-    console.log(`Message sent to: ${ctb.to}`);
+    console.log(`Message sent to: ${email}`);
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
   
 }
