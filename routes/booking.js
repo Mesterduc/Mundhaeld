@@ -15,12 +15,16 @@ router.get('/booking', (req, res) => {
 })
 
 router.post('/booking', (req, res) => {
-  navn = req.body.MitNavn
+  navn = req.body.navn
   email = req.body.email
   telefon = req.body.telefonnummer
   antal = req.body.antalperson
   beskrivelse = req.body.beskrivelse
   dato = req.body.dato
+  
+
+  starttidspunkt = req.body.starttimepicker
+  sluttidspunkt = req.body.sluttimepicker
 
   sendmail(),
   res.render('booking', {tid: tidspunkter, sluttid: sluttidspunkter})
@@ -31,15 +35,15 @@ module.exports = router;
 
 
 //-------- Tidsvælger
-const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02']
+const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
 let sluttidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
 let navn ="";
 let email = "";
 let telefon = "";
 let antal = "";
 let beskrivelse = "";
-let dato ="";
-let starttidspunkt;
+let dato = "";
+let starttidspunkt = "";
 let sluttidspunkt;
 //document.getElementsByName('starttidspunkt').selectedIndex
 
@@ -52,6 +56,9 @@ function ændreTid() {
   }
 }
 
+function change(){
+  console.log("sutmiglige");
+}
 
 //-------- SMTP Mails
 async function sendmail() {
@@ -76,8 +83,24 @@ async function sendmail() {
       from: `"${navn}" <${email}>`, // sender address
       to: "kevinjoergensen@outlook.com", // list of receivers
       subject: `Reservation - d: ${dato}`, // Subject line
-      text: `${beskrivelse} ${antal} ${telefon}`, // plain text body
-      html: `<b>Hello world?</b> ${navn}` // html body
+      text: `Navn: ${navn}
+      Email: ${email}
+      Dato: ${dato}
+      Tlfnr: ${telefon}
+      Antal: ${antal}
+      Kommentar: ${beskrivelse}
+      Start: ${starttidspunkt}
+      Slut: ${sluttidspunkt}`, // plain text body
+      html: `
+      <p><b> Navn: </b>${navn} </p>
+      <p><b> Email: </b>${email}</p>
+      <p><b>Dato: </b>${dato}</p>
+      <p><b>Tlfnr: </b>${telefon}</p>
+      <p><b>Antal: </b>${antal}</p>
+      <p><b>Kommentar: </b>${beskrivelse}</p>
+      <p><b>Start: </b>${starttidspunkt}</p>
+      <p><b>Slut: </b>${sluttidspunkt}</p>
+      ` // html body
     });
   
     console.log(`Message sent to: ${email}`);
