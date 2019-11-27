@@ -12,9 +12,15 @@ router.post('/admin', (req,res)=>{
     res.redirect('sortiment')
 })
 
-router.delete('/admin/:id', (req, res)=>{
-    controller.deleteProduct(req)
-    res.redirect('sortiment')
+router.post('/admin/:id', (req, res)=>{
+    console.log("her")
+    let id = req.params.id
+    console.log(id)
+    controller.deleteProduct(id)
+    // res.send("deleted")
+    console.log("her2")
+    res.redirect('/admin/sortiment')
+    console.log("her3")
 })
   
 
