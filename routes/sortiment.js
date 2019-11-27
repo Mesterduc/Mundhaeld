@@ -6,6 +6,11 @@ router.get('/sortiment', (req, res) => {
     let product = controller.getProdukt().then(data => {
         return res.render("sortiment", {product: data});
     })
-  }); 
+});
+router.get('/admin/sortiment', (req, res) => {
+  let product = controller.getProdukt().then(data => {
+      return res.render("sortimentAdmin", {product: data});
+  })
+}); 
 
 module.exports = router;
