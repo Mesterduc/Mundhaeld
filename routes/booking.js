@@ -21,6 +21,7 @@ router.post('/booking', (req, res) => {
   antal = req.body.antalperson
   beskrivelse = req.body.beskrivelse
   dato = req.body.dato
+  starttidspunkt = req.body.starttimepicker;
 
   sendmail(),
   res.render('booking', {tid: tidspunkter, sluttid: sluttidspunkter})
@@ -32,7 +33,7 @@ module.exports = router;
 
 //-------- Tidsvælger
 const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02']
-let sluttidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
+let sluttidspunkter = [];
 let navn ="";
 let email = "";
 let telefon = "";
@@ -43,14 +44,9 @@ let starttidspunkt;
 let sluttidspunkt;
 //document.getElementsByName('starttidspunkt').selectedIndex
 
-starttid = window.document.getElementsByName('starttimepicker');
-window.addEventListener("change", ændreTid())
-function ændreTid() {
-  sluttidspunkter = [];
-  for (let i = 5; i < tidspunkter.length; i++) {
-    sluttidspunkter.push(tidspunkter[i]); 
-  }
-}
+//starttid = window.document.getElementsByName('starttimepicker');
+//window.addEventListener("change", ændreTid())
+
 
 
 //-------- SMTP Mails

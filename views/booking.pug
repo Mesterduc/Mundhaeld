@@ -24,12 +24,23 @@ block content
                 p Dato:
                 input#datepicker(v-model='newDate' name="dato" placeholder="Vælg dato" )
                 p Starttidspunkt:
-                select#timepicker(name="starttimepicker")
+                select#starttimepicker(name="starttimepicker" onchange="changingTime()")
                     each val in tid
                         option=val
                 p Sluttidspunkt:
-                select#timepicker(name="sluttimepicker")
-                    each val in sluttid
-                        option=val
+                select#sluttimepicker(name="sluttimepicker")
             div(class="grid-container-send")
                 input(type='submit' value='Send')
+            script.
+                function changingTime() {
+                    let indeks = document.getElementById('starttimepicker').selectedIndex
+                    let slut = document.getElementById('sluttimepicker');
+                    let start = document.getElementById('starttimepicker');
+                    let len = slut.length;
+                    document.getElementById('sluttimepicker').options.length = 0;
+                    for (let i = indeks + 1; i < start.length; i++) {
+                        let option = document.createElement("option");
+                        option.text = start[i].value;
+                        slut.add(option);
+                    }
+                }
