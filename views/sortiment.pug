@@ -6,24 +6,25 @@ block content
     - var current = "Sortiment"
     include template/nav
 
-    div(class="container")
-        each p in product
-            ul(class="container_product")
-                img(src="/logo.png" alt="" class="container_product_billede")
-                //- img(class="container_product_billede")= pro.billede
-                div
-                    div(class="hej")
-                        li= p.name
-                div
-                    li= p.alcoholP
-                        |  %
-                    br
-                    li= p.price 
-                        |kr. 
-                    br
-                div(class="container_product_beskrivelse")
-                    li Beskrivelse
-                    div(class="container_product_beskrivelse_indhold")
-                        p= p.desciption
-            
+    body
+        div(class="container")
+            each p in product
+                ul(class="container_product")
+                    img(src="/logo.png" alt="" class="container_product_billede")
+                    //- img(class="container_product_billede")= pro.billede
+                    div
+                        div(class="hej")
+                            li= p.name
+                    div
+                        li= p.alcoholP
+                            |  %
+                        br
+                        li= p.price 
+                            |kr. 
+                        br
+                    div(class="container_product_beskrivelse")
+                        li Beskrivelse
+                        div(class="container_product_beskrivelse_indhold")
+                            p= p.desciption
+                
 

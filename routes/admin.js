@@ -9,7 +9,12 @@ router.get('/admin', (req, res) => {
 
 router.post('/admin', (req,res)=>{
     controller.createProduct(req.body)
-    res.render('forside')
+    res.redirect('sortiment')
+})
+
+router.delete('/admin/:id', (req, res)=>{
+    controller.deleteProduct(req)
+    res.redirect('sortiment')
 })
   
 

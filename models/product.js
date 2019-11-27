@@ -5,7 +5,7 @@ let productSchema = new Schema({
     _id: Schema.Types.ObjectId,
     name: String,
     alcoholP: Number,
-    price: Number,
+    price: String,
     desciption: String
 })
 
