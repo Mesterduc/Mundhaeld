@@ -116,7 +116,7 @@ li, li a {
   font-size: 18px;
 }
 .container_product {
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
   grid-column-start: 2;
   display:inline-grid;
   width: 1000px;
@@ -131,6 +131,15 @@ li, li a {
 }
 .container_product_beskrivelse_indhold {
   font-size: 10px;
+}
+/* --------------------------- SortimentAdmin -----------------------------*/
+.container_product_slet {
+  text-align: center;
+}
+.container_product_slet img {
+  
+  height: 30px;
+  height: 30px; 
 }
 
 
