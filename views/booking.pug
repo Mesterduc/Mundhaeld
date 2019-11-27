@@ -10,7 +10,7 @@ block content
         div(class="grid-container")
             div(class="grid-container-info")
                 p Navn:
-                input#bName(placeholder="Navn" name="MitNavn")
+                input#bName(placeholder="Navn" name="navn")
                 p Email:
                 input#bEmail(type='text' name='email' placeholder="Email")
                 p Telefon nr:
@@ -24,12 +24,22 @@ block content
                 p Dato:
                 input#datepicker(v-model='newDate' name="dato" placeholder="Vælg dato" )
                 p Starttidspunkt:
-                select#timepicker(name="starttimepicker")
+                select#starttimepicker(name="starttimepicker" onclick="changingtime()")
                     each val in tid
                         option=val
                 p Sluttidspunkt:
-                select#timepicker(name="sluttimepicker")
+                select#sluttimepicker(name="sluttimepicker")
                     each val in sluttid
                         option=val
             div(class="grid-container-send")
                 input(type='submit' value='Send')
+            script.
+                function changingtime() {
+                    console.log("SUT MIG")
+                let indeks = document.getElementById('starttimepicker').selectedIndex
+                console.log(indeks)
+                
+                
+                
+                }
+            
