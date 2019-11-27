@@ -10,10 +10,18 @@ exports.createProduct = function(req,res){
         product.alcoholP = req.alcoholP,
         product.price = req.price,
         product.desciption = req.desciption
-    
+
     product.save((err)=>{
         if(err){return handleError(err)}
     });
+ }
+
+ exports.deleteProduct = function(req, res){
+    let id = req.params._id;
+    Product.findByIdAndDelete(id).exec((err) => {
+        if(err) return handleError(err)
+        console.log(`Produkt med ${id}, er blevet slettet`)
+    })
  }
 
 exports.getProducts = function(){
