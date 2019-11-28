@@ -28,6 +28,7 @@ router.post('/booking', (req, res) => {
   let starttidspunkt = req.body.starttimepicker
   let sluttidspunkt = req.body.sluttimepicker
   smtp.sendtilmads(navn,email,dato,telefon,antal,beskrivelse,starttidspunkt,sluttidspunkt),
+  smtp.sendtilkunde(navn,email,dato,telefon,antal,beskrivelse,starttidspunkt,sluttidspunkt),
   res.render('booking', {tid: tidspunkter, sluttid: sluttidspunkter})
   //res.render('booking', {sluttid: sluttidspunkter})
 })
