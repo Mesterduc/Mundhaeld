@@ -9,18 +9,12 @@ body {
     color: rgba(217,217,217,1);
     letter-spacing: normal;
 }
-
-#logo {
-    display: block;
-    margin-left: 43%;
-    margin-right: auto;
-    padding-top: 5%;
-}
+/* ----------------------------- Menu ------------------------------*/
 
 #menu {
     list-style-type: none;
     margin: 0;
-    padding-top: 40px;
+    padding-top: 20px;
     float: none;
     text-align: center;
     color: lightgray;
@@ -32,7 +26,7 @@ body {
 .active{
     color: #800000;
 }
-
+/* ----------------------------- Forside -------------------------------*/
 li, li a {
     display: inline;
     padding-left: 40px;
@@ -43,9 +37,9 @@ li, li a {
     font-size: 30px;
     text-decoration: none;
 }
-
 .kontakt {
     text-align: center;
+    margin-top: 30px;
   }
    
   .kontakt_info_title {
@@ -82,8 +76,23 @@ li, li a {
   width: 150px;
 }
  /*--------------------- Booking -------------------------*/
+
+@media only screen and (max-width: 800px) {
+    /* lille skærm */
+    .grid-container {
+        display: inline;
+        
+    }
+}
+@media only screen and (min-width: 800px) {
+/* stor skærm */
+    .grid-container {
+        display: grid;
+    }
+}
+
 .grid-container{
-    display: grid;
+    /* display: inline; */
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     grid-template-rows:  1fr 1fr;
     text-align: center;
@@ -106,31 +115,83 @@ li, li a {
   grid-row-end: 3;
 }
 
+
+/* --------------------------- Mobil Sortiment/ Sortiment ----------------------------- */
+@media only screen and (max-width: 600px) {
+/* lille skærm */    
+    .container_product {
+        grid-template-columns: 1fr;
+        text-align: center;
+        width: 300px;
+    }
+    .product_name_A{
+        margin-left: -70px;
+    }
+    .product_name{
+        margin-top: 10px;
+    }
+}
+/* Mellem skærm */
+@media only screen and (max-width: 850px) {
+    .product_name_A{
+        margin-left: -70px;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+/* stor skærm */
+    .container_product {
+        /* display:inline-grid; */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 1000px;
+        display:inline-grid;
+    }
+    .product_name{
+        display: inline-grid;
+        
+    }
+    .container_product_billede {
+        width: 70px;
+        height: 70px;
+        
+        /* border: 2px solid green;  */
+    }
+    .product_name_A{
+        margin-top: -25px;
+    }
+}
 /* --------------------------- Sortiment -----------------------------*/
 
 .container {
   margin-top: 20px;
-  text-align: center; 
+  text-align: center;
 }
 .container li {
   font-size: 18px;
 }
 .container_product {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  grid-column-start: 2;
-  display:inline-grid;
-  width: 1000px;
-  text-align: left;
+    text-align: left;
 }
-.container_product_billede {
-  width: 70px;
-  height: 70px;
+.product_name_price {
+    text-align: center;
 }
-.container_product_beskrivelse li {
-  font-size: 15px;
-}
+.container_product_beskrivelse {
+    text-align: center;
+  }
 .container_product_beskrivelse_indhold {
-  font-size: 10px;
+    font-size: 10px;
+    text-align: center;
+}
+.product_name{
+    text-align: center;
+}
+
+.container_product_billede {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* --------------------------- SortimentAdmin -----------------------------*/
 .container_product_slet {

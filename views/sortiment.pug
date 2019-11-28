@@ -12,13 +12,11 @@ block content
                 ul(class="container_product")
                     img(src="/logo.png" alt="" class="container_product_billede")
                     //- img(class="container_product_billede")= pro.billede
-                    div
-                        div(class="hej")
-                            li= p.name
-                    div
-                        li= p.alcoholP
+                    div(class="product_name")
+                        li= p.name
+                        li(class="product_name_A")= p.alcoholP
                             |  %
-                        br
+                    div(class="product_name_price")
                         li= p.price 
                             |kr. 
                         br
