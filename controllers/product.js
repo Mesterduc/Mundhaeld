@@ -17,12 +17,9 @@ exports.createProduct = function(req,res){
  }
 
  exports.deleteProduct = function(id){
-    // let id = req.params._id;
-    // let id = "5ddd2ed97dddd90d6c147379";
-
     Product.findByIdAndDelete(id).exec((err) => {
         if(err) return handleError(err)
-        console.log(`Produkt med ${id}, er blevet slettet`)
+        console.log(`Produktet med ${id}, er blevet slettet`)
     })
  }
 
