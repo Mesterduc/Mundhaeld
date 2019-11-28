@@ -29,6 +29,7 @@ block content
                 div(class="container_product_slet")
                     form(action="/admin/" + p._id method="POST")
                         input(class="sletKnap" src="/trash.png" type='image')
+                    form(action="/adminRedigere/" + p._id method="GET")
                         input(class="sletKnap" src="/redigere.png" type='image')
                         
 

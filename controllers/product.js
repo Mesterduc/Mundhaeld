@@ -23,10 +23,12 @@ exports.createProduct = function(req,res){
     })
  }
 
+ exports.editProduct = function(id){
+
+ }
+
 exports.getProduct = function(productID){
-    return Product.findOne({name: productID}).exec((err)=>{
-        if(err) return handleError(err)
-    })
+    return Product.findOne({_id: productID}).exec()
 }
 
 exports.getProdukt = async function() {
