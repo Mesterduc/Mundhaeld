@@ -9,9 +9,9 @@ block content
     body
         br
         h2 Redigere produkt
-        form#form(action="/admin" method='PUT')
+        form#form(action='/admin/edit/' method='POST')
             p Produkt navn
-            input#name(name="name" type='text')
+            input#name(name="name", type='text', value="")
             p Alkohol %
             input#alcoholP(name='alcoholP' type='text')
             p Pris
@@ -20,4 +20,6 @@ block content
             textarea#desciption(name='desciption', type='text', cols="30", rows="5")
             br
             br
-            input(type='Submit' value='Opret')
+            input(type='Submit' value='Gem')
+
+        
