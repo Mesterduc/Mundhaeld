@@ -9,17 +9,20 @@ block content
     body
         br
         h2 Redigere produkt
-        form#form(action='/admin/edit/' method='POST')
+        form#form(action='/admin/edit/'+_id method='POST')
             p Produkt navn
-            input#name(name="name", type='text', value="")
+            input#name(name="name", type='text', value= name)
             p Alkohol %
-            input#alcoholP(name='alcoholP' type='text')
+            input#alcoholP(name='alcoholP' type='text' value= alcoholP)
             p Pris
-            input#price(name='price' type='text')
+            input#price(name='price' type='text' value= price)
             p Beskrivelse
-            textarea#desciption(name='desciption', type='text', cols="30", rows="5")
+            textarea#desciption(name='desciption' type='text', cols="30", rows="5") #{desciption}
             br
             br
             input(type='Submit' value='Gem')
+
+                
+
 
         

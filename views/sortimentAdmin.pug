@@ -19,7 +19,6 @@ block content
                     li= p.price 
                         |kr. 
                     br
-                    li= p._id
                 div(class="admincontainer_product_beskrivelse")
                     li Beskrivelse
                     div(class="admincontainer_product_beskrivelse_indhold")
@@ -27,7 +26,7 @@ block content
                 div(class="container_product_slet")
                     form(action="/admin/" + p._id method="POST")
                         input(class="sletKnap" src="/trash.png" type='image')
-                    form(action="/adminRedigere/" + p._id method="GET")
+                    form(action="/adminRedigere/" + p._id method="POST")
                         input(class="sletKnap" src="/redigere.png" type='image')
                         
 
