@@ -10,13 +10,13 @@ block content
         div(class="grid-container")
             div(class="grid-container-info")
                 p Navn:
-                input#bName(placeholder="Navn" name="navn")
+                input#bName(placeholder="Navn" name="navn" required)
                 p Email:
-                input#bEmail(type='text' name='email' placeholder="Email")
+                input#bEmail(type='text' name='email' placeholder="Email" required)
                 p Telefon nr:
-                input#bPhone(type='text' name='telefonnummer' placeholder="Nr.")
+                input#bPhone(type='text' name='telefonnummer' placeholder="Nr." required)
                 p Antal personer:
-                input#bPersons(type='number' name='antalperson' placeholder="Antal")
+                input#bPersons(type='number' name='antalperson' placeholder="Antal" required)
             //- input(type='text' name='beskrivelse')
             div(class="grid-container-info2")
                 p Beskrivelse:

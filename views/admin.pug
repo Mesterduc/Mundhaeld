@@ -9,14 +9,25 @@ block content
     div(class="admin")
         h2 Opret produkt
         form#form(action="/admin" method='POST')
-            p Produkt navn
-            input#name(type='text' name="name")
-            p Alkohol %
-            input#alcoholP(type='text' name='alcoholP')
-            p Pris
-            input#price(type='text' name='price')
-            p Beskrivelse
+            div(class="form")
+                input#name(type='text' name="name" required)
+                label(class="label_navn")
+                    span(class="input_navn") Produkt navn
+            div(class="form")
+                input#alcoholP(type='text' name='alcoholP' required)
+                label(class="label_navn")
+                    span(class="input_navn") Alkohol %
+
+            div(class="form")
+                input#price(type='text' name='price' required)
+                label(class="label_navn")
+                        span(class="input_navn") Pris
+
+            br
+            label Beskrivelse
+            br
             textarea#desciption(type='text' name='desciption' cols="30", rows="5")
+            //- //- span Beskrivelse
             br
             br
             input(type='Submit' value='Opret')
