@@ -30,7 +30,7 @@ block content
                 p Sluttidspunkt:
                 select#sluttimepicker(name="sluttimepicker")
             div(class="grid-container-send")
-                input(type='submit' value='Send')
+                input(class="admin_send" type='submit' value='Send')
             script.
                 function changingTime() {
                     let indeks = document.getElementById('starttimepicker').selectedIndex
