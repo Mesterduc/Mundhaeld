@@ -313,10 +313,9 @@ li a {
 /* ---------------------------------------- Admin ------------------------------------*/
 .admin {
     text-align: center;
+    margin-top: 50px;
 }
 .form {
-  /* text-align: center; */
-  /* border: 2px solid #595F6E; */
   position: relative;
   width: 50%;
   height: 50px;
@@ -325,12 +324,6 @@ li a {
   left: 25%;
 }
 
-.admin p {
-    margin-bottom: 0px;
-}
-/* .admin input, textarea {
-    border: 2px solid whitesmoke;
-} */
 .form input{
     width: 100%;
     height: 100%;
@@ -351,6 +344,14 @@ li a {
     border-bottom: 1px solid whitesmoke;
 }
 
+
+.input_navn {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 1s ease;
+}
+
 .form label::after {
     content: "";
     position: absolute;
@@ -358,26 +359,28 @@ li a {
     bottom: -1px;
     height: 100%;
     width: 100%;
-    border-bottom: 3px solid #5fa8d3;
+    border-bottom: 3px solid #128112;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: all 1s ease;
 }
-
-.input_navn {
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
-    transition: all 0.3s ease;
-}
-
 .form input:focus + .label_navn .input_navn,
 .form input:valid + .label_navn .input_navn {
     transform: translateY(-150%);
     font-size: 15px;
-    color: #5fa8d3;
+    color: #128112;
+}
+.form input:invalid + .label_navn .input_navn {
+    transform: translateY(-150%);
+    font-size: 15px;
+    color: red;
 }
 
-.form input:focus + .label_navn::after, .form input:valid + .label_navn::after{
+.form input:valid + .label_navn::after{
 transform: translateX(0%);
+}
+
+.admin textarea {
+    width: 350px;
+    height: 150px;
 }
 
