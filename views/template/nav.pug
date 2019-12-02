@@ -5,11 +5,37 @@ mixin navLink(link, name)
             class={active: name === current}
         ) #{name}
 
-ul(id="menu") 
-    +navLink("forside", "Forside")
-    +navLink("booking", "Booking")
-    +navLink("sortiment", "Sortiment")
-    +navLink("admin", "Admin")
-    a(href="https://www.facebook.com/mundhaeld/")
-        img(src="FBlogo.png" alt="")
-    li 
+mixin navRespLink(link, name)
+    li#respContent
+        a(
+            href=link
+            class={active: name === current}
+        ) #{name}
+
+
+span.menuen
+    div.resposive()
+        img#respmenu(src="respmenuikon.png" onclick=`openClose()`)
+        div#respdiv
+            ul#respul
+                +navRespLink("forside", "Forside")
+                +navRespLink("booking", "Booking")
+                +navRespLink("sortiment", "Sortiment")         
+            script.
+                function openClose(){
+                    let menu = document.getElementById('respdiv')
+                    if(menu.style.visibility === "hidden"){
+                        menu.style.visibility = "visible"
+                        menuul.style.visibility = "visible"
+                    } else {
+                        menu.style.visibility = "hidden"
+                        menuul.style.visibility = "hidden"
+                    }
+                }
+    div#bigmenu
+        ul(id="menu") 
+            +navLink("forside", "Forside")
+            +navLink("booking", "Booking")
+            +navLink("sortiment", "Sortiment")
+            +navLink("admin", "Admin")
+
