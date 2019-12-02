@@ -6,29 +6,28 @@ block content
     //- - var current = "Sortiment"
     include template/nav
 
-    div(class="container")
+    div(class="admincontainer")
         each p in product
-            ul(class="container_product")
-                img(src="/logo.png" alt="" class="container_product_billede")
+            ul(class="admincontainer_product")
+                img(src="/logo.png" alt="" class="admincontainer_product_billede")
                 //- img(class="container_product_billede")= pro.billede
-                div
-                    div(class="hej")
-                        li= p.name
-                div
-                    li= p.alcoholP
+                div(class="adminproduct_name")
+                    li= p.name
+                    li(class="adminproduct_name_A")= p.alcoholP
                         |  %
-                    br
+                div(class="adminproduct_name_price")
                     li= p.price 
                         |kr. 
                     br
                     li= p._id
-                div(class="container_product_beskrivelse")
+                div(class="admincontainer_product_beskrivelse")
                     li Beskrivelse
-                    div(class="container_product_beskrivelse_indhold")
+                    div(class="admincontainer_product_beskrivelse_indhold")
                         p= p.desciption
                 div(class="container_product_slet")
                     form(action="/admin/" + p._id method="POST")
                         input(class="sletKnap" src="/trash.png" type='image')
+                    form(action="/adminRedigere/" + p._id method="GET")
                         input(class="sletKnap" src="/redigere.png" type='image')
                         
 

@@ -1,0 +1,25 @@
+extends template/layout
+
+block content
+    
+    //- Menu bar
+    - var current = "Admin"
+    include template/nav
+    
+    body
+        br
+        h2 Redigere produkt
+        form#form(action='/admin/edit/' method='POST')
+            p Produkt navn
+            input#name(name="name", type='text', value="")
+            p Alkohol %
+            input#alcoholP(name='alcoholP' type='text')
+            p Pris
+            input#price(name='price' type='text')
+            p Beskrivelse
+            textarea#desciption(name='desciption', type='text', cols="30", rows="5")
+            br
+            br
+            input(type='Submit' value='Gem')
+
+        
