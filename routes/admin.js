@@ -6,18 +6,25 @@ const controller = require('../controllers/product')
 router.get('/admin', (req, res) => {
     res.render('admin')
 })
-router.get('/adminRedigere/:id', (req, res) => {
+router.post('/adminRedigere/:id', (req, res) => {
     const id = req.params.id
     const product = controller.getProduct(id)
-    console.log(id)
-    res.render('adminRedigere', {Product: product})
-    // res.render('adminRedigere', {name: product.name, alcoholP: product.alcoholP, price: product.price, desciption: product.desciption})
-    // res.render('adminRedigere', {product: product})
-
+    product.then(productToEdit => {
+        res.render('adminRedigere', {
+            _id: productToEdit._id,
+            name: productToEdit.name, 
+            alcoholP: productToEdit.alcoholP, 
+            price: productToEdit.price, 
+            desciption: productToEdit.desciption})
+    })
+    .catch(function(err){
+        return err
+    })
 })
 
-router.put('/admin/edit/:id', (req, res)=> {
-
+router.post('/admin/edit/:id', (req, res)=> {
+    controller.editProduct(req)
+    res.redirect('/admin/sortiment')
 })
 
 router.post('/admin', (req, res) => {

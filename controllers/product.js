@@ -23,8 +23,21 @@ exports.createProduct = function(req,res){
     })
  }
 
- exports.editProduct = function(id){
+ exports.editProduct = function(req, res){
+    let tempProduct = {};
+    tempProduct.name = req.body.name;
+    tempProduct.alcoholP = req.body.alcoholP;
+    tempProduct.price = req.body.price;
+    tempProduct.desciption = req.body.desciption;
 
+    let oldProduct = {_id: req.params.id}
+
+    Product.updateOne(oldProduct, tempProduct, function(err){
+        if(err){
+            console.log(err)
+            return;
+        }
+    })
  }
 
 exports.getProduct = function(productID){
@@ -33,4 +46,4 @@ exports.getProduct = function(productID){
 
 exports.getProdukt = async function() {
     return await Product.find({}).exec();
-  };
+}
