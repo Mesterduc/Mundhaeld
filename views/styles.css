@@ -349,7 +349,7 @@ li a {
     position: absolute;
     bottom: 5px;
     left: 0px;
-    transition: all 1s ease;
+    transition: all 0.3s ease;
 }
 
 .form label::after {
@@ -361,7 +361,7 @@ li a {
     width: 100%;
     border-bottom: 3px solid #128112;
     transform: translateX(-100%);
-    transition: all 1s ease;
+    transition: all 0.4s ease;
 }
 .form input:focus + .label_navn .input_navn,
 .form input:valid + .label_navn .input_navn {
