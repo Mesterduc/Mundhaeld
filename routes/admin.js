@@ -6,6 +6,8 @@ const controller = require('../controllers/product')
 router.get('/admin', (req, res) => {
     res.render('admin')
 })
+
+
 router.post('/adminRedigere/:id', (req, res) => {
     const id = req.params.id
     const product = controller.getProduct(id)

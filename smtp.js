@@ -69,7 +69,7 @@ exports.sendtilmads = async function sendmail(navn, email, dato, telefon, antal,
   <footer></footer>
 </body>
         ` // html body
-      });
+      })
     
       console.log(`Message sent to: ${email}`);
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
