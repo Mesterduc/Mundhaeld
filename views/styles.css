@@ -204,6 +204,7 @@ li a {
 }
 .container li {
   font-size: 18px;
+  list-style-type: none;
 }
 .product_name_price {
   text-align: center;
