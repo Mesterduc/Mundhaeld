@@ -1,19 +1,20 @@
 const express = require('express')
 const router = express.Router();
 const fs = require('fs')
-const jsdom = require('jsdom')
-const { JSDOM } = jsdom;
+// const jsdom = require('jsdom')
+// const { JSDOM } = jsdom;
 const smtp = require('../smtp');
 
 const bookingpug = fs.readFileSync("./views/booking.pug")
-const document = new JSDOM(bookingpug);
-let window = document.window;
+// const document = new JSDOM(bookingpug);
+// let window = document.window;
 const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
 let sluttidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
 
 router.get('/booking', (req, res) => {
   res.render('booking', {tid : tidspunkter, sluttid : sluttidspunkter})
 })
+
 
 router.post('/booking', (req, res) => {
   let navn = req.body.navn
@@ -22,7 +23,6 @@ router.post('/booking', (req, res) => {
   let antal = req.body.antalperson
   let beskrivelse = req.body.beskrivelse
   let dato = req.body.dato
-  
 
   let starttidspunkt = req.body.starttimepicker
   let sluttidspunkt = req.body.sluttimepicker
