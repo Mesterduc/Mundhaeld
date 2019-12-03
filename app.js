@@ -23,6 +23,9 @@ mongoose.connect("mongodb+srv://dbNissen:bajer123@mundhaeld-nshjk.mongodb.net/te
 const adminRouter = require('./routes/admin.js')
 app.use('', adminRouter)
 
+const loginRouter = require('./routes/login.js')
+app.use('', loginRouter)
+
 const bookingRouter = require('./routes/booking.js')
 app.use('', bookingRouter)
 
