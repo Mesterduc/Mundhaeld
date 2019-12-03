@@ -11,10 +11,13 @@ let window = document.window;
 const tidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
 let sluttidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '00', '01', '02'];
 
+// Render booking.pug og indsætter data i select-boksene
 router.get('/booking', (req, res) => {
   res.render('booking', {tid : tidspunkter, sluttid : sluttidspunkter})
 })
 
+// Sender en mail til Munhæld og kunden, med booking informationer
+// henter funktionerne fra smtp.js
 router.post('/booking', (req, res) => {
   let navn = req.body.navn
   let email = req.body.email
@@ -33,11 +36,6 @@ router.post('/booking', (req, res) => {
 
 module.exports = router;
 
-
-//-------- Tidsvælger
-
-//starttid = window.document.getElementsByName('starttimepicker');
-//window.addEventListener("change", ændreTid())
 
 
 

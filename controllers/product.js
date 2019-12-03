@@ -2,7 +2,7 @@ const Product = require('../models/product')
 const Schema = require('mongoose').Schema
 const mongoose = require('mongoose')
 
-
+// opretter et produkt, som kaster en error hvis nødvendigt
 exports.createProduct = function(req,res){
     let product = new Product({})
         product._id = new mongoose.Types.ObjectId(),
@@ -16,13 +16,14 @@ exports.createProduct = function(req,res){
     });
  }
 
+ // sletter et produkt, som kaster en error hvis produktet ikke kan findes i mongodb
  exports.deleteProduct = function(id){
     Product.findByIdAndDelete(id).exec((err) => {
-        if(err) return handleError(err)
-        console.log(`Produktet med ${id}, er blevet slettet`)
-    })
+        if(err) return handleError(err)})
  }
 
+ // updaterer et produkt. Der "oprettes" et tomt objekt, som indeholder de nye data
+ // derefter tildeles de til det produkt som skal opdateres, ved hjælp af mongoose' updateOne()
  exports.editProduct = function(req, res){
     let tempProduct = {};
     tempProduct.name = req.body.name;
@@ -34,16 +35,23 @@ exports.createProduct = function(req,res){
 
     Product.updateOne(oldProduct, tempProduct, function(err){
         if(err){
-            console.log(err)
-            return;
+            return handleError(err)
         }
     })
  }
 
+ // Finder ét produkt ud fra produkt ID
 exports.getProduct = function(productID){
     return Product.findOne({_id: productID}).exec()
+    .catch(function(err){
+        return handleError(err)
+    })
 }
 
+// Henter alle produkter i mongodb
 exports.getProducts = async function() {
-    return await Product.find({}).exec();
+    return await Product.find({}).exec()
+    .catch(function(err){
+        return handleError(err)
+    });
 }

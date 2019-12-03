@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 //-------- SMTP Mails
 exports.sendtilmads = async function sendmail(navn, email, dato, telefon, antal, beskrivelse,starttidspunkt,sluttidspunkt) {
-  
+  try{
     // skaber genbruglig transportør-object med SMTP transport
     let transporter = await nodemailer.createTransport({
       
@@ -73,12 +73,15 @@ exports.sendtilmads = async function sendmail(navn, email, dato, telefon, antal,
     
       console.log(`Message sent to: ${email}`);
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-    
+    }
+    catch(err){
+      return handleError(err)
+    }
   }
   
   
   exports.sendtilkunde = async function sendmail(navn, email, dato, telefon, antal, beskrivelse,starttidspunkt,sluttidspunkt) {
-  
+    try{
     // skaber genbruglig transportør-object med SMTP transport
     let transporter = await nodemailer.createTransport({
       
@@ -152,5 +155,8 @@ exports.sendtilmads = async function sendmail(navn, email, dato, telefon, antal,
     
       console.log(`Message sent to: ${email}`);
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-    
+    }
+    catch(err){
+      return handleError(err)
+    }
   }
