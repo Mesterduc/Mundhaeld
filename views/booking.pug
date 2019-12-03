@@ -12,14 +12,18 @@ block content
     form(action="/booking" method="post")
         div(class="grid-container")
             div(class="grid-container-info")
-                p#hej3 Navn:
-                input#bName(placeholder="Navn" name="navn" required)
+                p Navn:
+                div#errorNavn(class="error")
+                input#bName(type="text" placeholder="Navn" name="navn" required)
                 p Email:
-                input#bEmail(type='text' name='email' placeholder="Email" required)
-                p Telefon nr:
-                input#bPhone(type='text' name='telefonnummer' placeholder="Nr." required)
+                div#errorEmail(class="error")
+                input#bEmail(type='email' name='email' placeholder="Email" required)
+                p Telefon Nr:
+                div#errorNr(class="error")
+                input#bPhone(type='number' name='telefonnummer' placeholder="Nr." required)
                 p Antal personer:
-                input#bPersons(type='number' name='antalperson' placeholder="Antal" required)
+                div#errorAntal(class="error")
+                input#bPersons(type='number' name='antalperson' placeholder="Antal" autocomplete="off" required)
             //- input(type='text' name='beskrivelse')
             div(class="grid-container-info2")
                 p Beskrivelse:
@@ -34,10 +38,6 @@ block content
                 select#sluttimepicker(name="sluttimepicker")
             div(class="grid-container-send")
                 input(class="admin_send" type='submit' value='Send')
-            
-            <form id="myForm">
-                <input type="text" id="myInput" >
-            </form>
             script.
                 function changingTime() {
                     let indeks = document.getElementById('starttimepicker').selectedIndex
