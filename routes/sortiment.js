@@ -10,7 +10,7 @@ router.get('/sortiment', (req, res) => {
 });
 
 // Henter alle produkter og render sortimentAdmin
-router.get('/admin/sortiment', (req, res) => {
+router.get('/adminsortiment', (req, res) => {
   let product = controller.getProducts().then(data => {
       return res.render("sortimentAdmin", {product: data});
   })
