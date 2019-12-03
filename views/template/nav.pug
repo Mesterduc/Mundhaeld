@@ -16,20 +16,25 @@ mixin navRespLink(link, name)
 span.menuen
     div.resposive()
         img#respmenu(src="respmenuikon.png" onclick=`openClose()`)
-        div#respdiv
+        br.breakpointers()
+        br.breakpointers()
+        div#respdiv(style="visibility: hidden; display: none")
             ul#respul
                 +navRespLink("forside", "Forside")
                 +navRespLink("booking", "Booking")
                 +navRespLink("sortiment", "Sortiment")         
             script.
                 function openClose(){
-                    let menu = document.getElementById('respdiv')
+                    let menu = document.getElementById('respdiv');
+                    let breaks = document.getElementsByClassName('breakpointers');
                     if(menu.style.visibility === "hidden"){
-                        menu.style.visibility = "visible"
-                        menuul.style.visibility = "visible"
+                        menu.style.visibility = "visible",
+                        menu.style.display = "block"
+                        //- breaks.style.display = "block"
                     } else {
-                        menu.style.visibility = "hidden"
-                        menuul.style.visibility = "hidden"
+                        menu.style.visibility = "hidden",
+                        menu.style.display = "none"
+                        //- breaks.style.display = "none"
                     }
                 }
     div#bigmenu

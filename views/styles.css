@@ -28,23 +28,31 @@ body {
 }
 
 #respmenu{
+  margin:0;
+  position: fixed;
   visibility: hidden;
   width: 10%;
   height: auto;
+  
 }
 #respdiv{
+  position: fixed;
   visibility: hidden;
-  position: relative;
+  display: none;
   width: auto;
   height: auto;
-  background-color: yellow;
+  background-color: black;
+  border-radius: 20px;  
 }
+
 #respul{
   list-style-type: none;
 }
-#respContent a{
-  
+#respcontent{
+  position: relative;
+  left: -30%;
 }
+
 /* ----------------------------- Forside -------------------------------*/
 #bigmenu li,
 li a {
