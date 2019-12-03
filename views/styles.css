@@ -92,6 +92,7 @@ li a {
   width: 500;
   align-items: center;
 }
+/* ------------------------------------- Booking -------------------------------------*/
 
 #bookingform {
   display: table;
@@ -116,6 +117,7 @@ li a {
 
 .grid-container-info {
   grid-column-start: 2;
+  
 }
 .grid-container-info2 {
   grid-column-start: 3;

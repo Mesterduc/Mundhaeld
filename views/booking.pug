@@ -1,7 +1,10 @@
 extends template/layout
 
-block content
+block script
+    script(defer src="/validation.js")
 
+block content
+    
     //- Menu bar
     - var current = "Booking"
     include template/nav
@@ -9,7 +12,7 @@ block content
     form(action="/booking" method="post")
         div(class="grid-container")
             div(class="grid-container-info")
-                p Navn:
+                p#hej3 Navn:
                 input#bName(placeholder="Navn" name="navn" required)
                 p Email:
                 input#bEmail(type='text' name='email' placeholder="Email" required)
@@ -22,7 +25,7 @@ block content
                 p Beskrivelse:
                 textarea#bComment(name="beskrivelse", cols="30", rows="10" placeholder="Hvilken type arrangement?\nF.eks. ølsmagning, julefrokost eller bordbestilling osv.\nAndre spørgsmål?")
                 p Dato:
-                input#datepicker(v-model='newDate' name="dato" placeholder="Vælg dato" )
+                input#datepicker(v-model='newDate' name="dato" placeholder="Vælg dato" required )
                 p Starttidspunkt:
                 select#starttimepicker(name="starttimepicker" onchange="changingTime()")
                     each val in tid
@@ -30,11 +33,11 @@ block content
                 p Sluttidspunkt:
                 select#sluttimepicker(name="sluttimepicker")
             div(class="grid-container-send")
-                input(class="admin_send" type='submit' value='Send' onclick="alertbox()")
-                script.
-                    function alertbox(){
-                        alert('Dit booking ønske er sendt til Mundhæld. Du vil få svar hurtigst muligt')
-                    }
+                input(class="admin_send" type='submit' value='Send')
+            
+            <form id="myForm">
+                <input type="text" id="myInput" >
+            </form>
             script.
                 function changingTime() {
                     let indeks = document.getElementById('starttimepicker').selectedIndex
@@ -47,6 +50,5 @@ block content
                         option.text = start[i].value;
                         slut.add(option);
                     }
-                }
-            
+                }     
 
