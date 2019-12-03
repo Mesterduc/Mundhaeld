@@ -104,6 +104,11 @@ li a {
   /*padding-right: 100px;*/
   width: 150px;
 }
+.error {
+  font-size: 10px;
+  color: #800000;
+}
+
 
 .grid-container {
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -111,8 +116,29 @@ li a {
   text-align: center;
   display: grid;
 }
+.grid-container-info input:valid {
+  border: 3px solid green;
+  border-radius: 5px;
+  
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.grid-container input:invalid, textarea:valid {
+  border: 3px solid gray;
+  border-radius: 5px;
+}
+
 .grid-container p {
   margin-bottom: 5px;
+}
+.grid-container textarea {
+  width: 270px;
+  resize: none;
 }
 
 .grid-container-info {

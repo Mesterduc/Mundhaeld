@@ -1,14 +1,76 @@
 // var form = document.getElementById("form");
+const error = document.getElementById("error")
 const navn = document.getElementById("bName")
-// var errorElement = document.getElementById("error")
-const form = document.getElementById('form');
-const hej3 = document.getElementById("hej3")
+const email = document.getElementById("bEmail")
+const nr = document.getElementById("bPhone")
+const antal = document.getElementById("bPersons")
+const dato = document.getElementById("datepicker")
 
-document.getElementById("myInput").addEventListener("focus", myFocusFunction);
-//x.addEventListener("blur", myBlurFunction);
+
+navn.addEventListener("blur", myFocusFunction);
+email.addEventListener("blur", tjekEmail);
+nr.addEventListener("blur", tjekNr);
+antal.addEventListener("blur", tjekAntal);
+antal.addEventListener("blur", tjekDato);
 
 function myFocusFunction() {
-  // alert("BøhH")
-  document.getElementById("myInput").style.backgroundColor = "yellow"; 
+  let messages = [] 
+
+  if(navn.value === "" || navn.value == null){
+    messages.push("Du skal skrive et navn")
+    navn.style.borderColor = "red"
+  }else{
+    navn.style.borderColor = "green" 
+    errorNavn.innerText = ""
+  }
+  if(messages.length > 0){
+    errorNavn.innerText = messages.join(", ")
+  }
+}
+
+function tjekEmail() {
+  let messages = [] 
+
+  if(email.value === "" || email.value == null || !email.validity.valid){
+    messages.push("Du skal skrive en email")
+    email.style.borderColor = "red"
+  }else{
+    email.style.borderColor = "green"
+    errorEmail.innerText = ""
+  }
+  if(messages.length > 0){
+    errorEmail.innerHTML = messages[0]
+  }
+}
+
+function tjekNr() {
+  let messages = []
+
+  if(nr.value === "" || nr.value == null){
+    messages.push("Du skal skrive et nr")
+    nr.style.borderColor = "red"
+  }else{
+    nr.style.borderColor = "green"
+    errorNr.innerText = ""
+  }
+  
+  if(messages.length > 0){
+    errorNr.innerText = messages[0];
+  }
+}
+
+function tjekAntal() {
+  let messages = [] 
+
+  if(antal.value === "" || antal.value == null){
+    messages.push("Du skal skrive et antal")
+    antal.style.borderColor = "red"
+  }else{
+    antal.style.borderColor = "green"
+    errorAntal.innerText = ""
+  }
+  if(messages.length > 0){
+    errorAntal.innerText = messages.join(", ")
+  }
 }
 
