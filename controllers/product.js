@@ -44,6 +44,6 @@ exports.getProduct = function(productID){
     return Product.findOne({_id: productID}).exec()
 }
 
-exports.getProdukt = async function() {
+exports.getProducts = async function() {
     return await Product.find({}).exec();
 }

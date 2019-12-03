@@ -13,7 +13,6 @@ let sluttidspunkter = ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21
 
 router.get('/booking', (req, res) => {
   res.render('booking', {tid : tidspunkter, sluttid : sluttidspunkter})
-  //res.render('booking', {sluttid : sluttidspunkter})
 })
 
 router.post('/booking', (req, res) => {
@@ -30,7 +29,6 @@ router.post('/booking', (req, res) => {
   smtp.sendtilmads(navn,email,dato,telefon,antal,beskrivelse,starttidspunkt,sluttidspunkt),
   smtp.sendtilkunde(navn,email,dato,telefon,antal,beskrivelse,starttidspunkt,sluttidspunkt),
   res.render('booking', {tid: tidspunkter, sluttid: sluttidspunkter})
-  //res.render('booking', {sluttid: sluttidspunkter})
 })
 
 module.exports = router;
