@@ -9,7 +9,7 @@ block content
     body
         br
         div(class="edit-product-container")
-            h2 Redigere produkt
+            h2 Rediger produkt
             form#form(action='/admin/edit/'+_id method='POST')
                 p Produkt navn
                 input#name(name="name", type='text', value= name)
@@ -18,11 +18,10 @@ block content
                 p Pris
                 input#price(name='price' type='text' value= price)
                 p Beskrivelse
-                textarea#desciption(name='desciption' type='text', cols="30", rows="5") #{desciption}
+                textarea#desciption(name='desciption' type='text', rows="5") #{desciption}
                 br
                 br
-                input(type='Submit' value='Gem')
-                br
-                br
-                div(id="fortryd")
-                    button(type='button' onclick="location.href='/adminsortiment'") Tilbage
+                div(id="gemBtn")
+                    input(type='Submit' value='Gem')
+                div(id="tilbageBtn")
+                    input(type='button' onclick="location.href='/adminsortiment'" value="Tilbage")
