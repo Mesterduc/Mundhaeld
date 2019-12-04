@@ -1,7 +1,8 @@
 extends template/layout
 
 block script
-    script(defer src="/validation.js")
+    script(defer src="/scripts/validation.js")
+    script(defer src="/scripts/timePicker.js")
 
 block content
     
@@ -38,17 +39,4 @@ block content
                 select#sluttimepicker(name="sluttimepicker")
             div(class="grid-container-send")
                 input(class="admin_send" type='submit' value='Send')
-            script.
-                function changingTime() {
-                    let indeks = document.getElementById('starttimepicker').selectedIndex
-                    let slut = document.getElementById('sluttimepicker');
-                    let start = document.getElementById('starttimepicker');
-                    let len = slut.length;
-                    document.getElementById('sluttimepicker').options.length = 0;
-                    for (let i = indeks + 1; i < start.length; i++) {
-                        let option = document.createElement("option");
-                        option.text = start[i].value;
-                        slut.add(option);
-                    }
-                }     
 

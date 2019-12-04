@@ -4,14 +4,18 @@ const navn = document.getElementById("bName")
 const email = document.getElementById("bEmail")
 const nr = document.getElementById("bPhone")
 const antal = document.getElementById("bPersons")
-const dato = document.getElementById("datepicker")
+const sumbit = document.getElementsByClassName("admin_send")
 
 
 navn.addEventListener("blur", myFocusFunction);
 email.addEventListener("blur", tjekEmail);
 nr.addEventListener("blur", tjekNr);
 antal.addEventListener("blur", tjekAntal);
-antal.addEventListener("blur", tjekDato);
+sumbit.addEventListener("click", send);
+
+function send() {
+alert("sendt");
+}
 
 function myFocusFunction() {
   let messages = [] 
