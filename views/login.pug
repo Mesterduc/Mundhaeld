@@ -1,17 +1,16 @@
 extends template/layout
 
 block content
-    
-    //- Menu bar
-    - var current = "Login"
-    include template/nav
 
-    div(class="login")
-        h1 Login
-        form(action="/login" method="POST")
-            p Username
-            input#username(type="text" name="username")
-            p Password
-            input#password(type="password" name="password")
-            input(type="submit" value="login")
+	//- Menu bar
+	- var current = "Login"
+	include template/nav
 
+	div(class="login")
+		h1 Login
+		form(action="/login" method="POST")
+			p Username
+			input#bruger(type="text" name="username")
+			p Password
+			input#adgang(type="password" name="password")
+			input#login(type="submit" value="login")

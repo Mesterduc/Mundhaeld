@@ -1,12 +1,34 @@
 const express = require('express')
 const app = express()
+const session = require('express-session')
 const pug = require('pug')
 app.set('view engine', 'pug')
 app.use(express.json())
-
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
+
+
+//Session opsætning
+function checkAuth (req, res, next) {
+	console.log('checkAuth ' + req.url);
+
+	// don't serve /secure to those not logged in
+	// you should add to this list, for each and every secure url
+	if (req.url === '/admin' && (!req.session || !req.session.authenticated)) {
+		res.render('login', { status: 403 });
+		return;
+  }
+  if (req.url === '/adminSortiment' && (!req.session || !req.session.authenticated)) {
+		res.render('login', { status: 403 });
+		return;
+	}
+
+	next();
+}
+
+app.use(checkAuth);
 
 
 //mongodb opsætning
