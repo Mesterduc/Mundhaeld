@@ -9,7 +9,7 @@ block content
     //- Menu bar
     - var current = "Booking"
     include template/nav
-
+    
     form(action="/booking" method="post")
         div(class="grid-container")
             div(class="grid-container-info")
@@ -38,5 +38,5 @@ block content
                 p Sluttidspunkt:
                 select#sluttimepicker(name="sluttimepicker")
             div(class="grid-container-send")
-                input(class="admin_send" type='submit' value='Send')
+                input#bookingSubmit(class="admin_send" type='submit' value='Send')
 

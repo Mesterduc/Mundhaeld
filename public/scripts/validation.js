@@ -4,7 +4,7 @@ const navn = document.getElementById("bName")
 const email = document.getElementById("bEmail")
 const nr = document.getElementById("bPhone")
 const antal = document.getElementById("bPersons")
-const sumbit = document.getElementsByClassName("admin_send")
+const sumbit = document.getElementById("bookingSubmit")
 
 
 navn.addEventListener("blur", myFocusFunction);
@@ -14,8 +14,11 @@ antal.addEventListener("blur", tjekAntal);
 sumbit.addEventListener("click", send);
 
 function send() {
-alert("sendt");
-}
+  if(navn.validity.valid && email.validity.valid && nr.validity.valid && antal.validity.valid){
+    alert("Tak for din henvendelse, vi vender hurtigst muligt tilbage til dig")
+  }
+  // alert("sendt");
+  }
 
 function myFocusFunction() {
   let messages = [] 
