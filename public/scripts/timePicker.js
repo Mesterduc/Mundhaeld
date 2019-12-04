@@ -11,3 +11,5 @@ function changingTime() {
       slut.add(option);
   }
 }     
+
+window.onload = changingTime();
