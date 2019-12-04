@@ -23,7 +23,7 @@ function send() {
 function myFocusFunction() {
   let messages = [] 
 
-  if(navn.value === "" || navn.value == null){
+  if(navn.value.trim() === "" || navn.value == null){
     messages.push("Du skal skrive et navn")
     navn.style.borderColor = "red"
   }else{
@@ -37,7 +37,7 @@ function myFocusFunction() {
 
 function tjekEmail() {
   let messages = [] 
-
+  
   if(email.value === "" || email.value == null || !email.validity.valid){
     messages.push("Du skal skrive en email")
     email.style.borderColor = "red"
