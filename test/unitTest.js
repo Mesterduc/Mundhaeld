@@ -3,35 +3,39 @@ const mongoose = require('mongoose');
 const path = require('../controllers/product');
 const {createProduct} = path;
 const {deleteProduct} = path;
-const {getProdukt} = path;
 const {getProduct} = path;
+const {getProducts} = path;
 
-describe('Test functions i controller', () => {
+
+describe('Test funktioner i controller', () => {
     
-    it('Test om createProduct() virker', () => {
+    // it('Test om createProduct() virker', () => {
 
-        // Ved ikke om man kan oprette et produkt gennem test?
-        // createProduct()
+    //     // createProduct()
         
-    })
+    // })
 
-    it('Test om deleteProduct() virker', () => {
+    //  it('Test om deleteProduct() virker', () => {
 
-        // deleteProduct()
+    //      // deleteProduct()
 
-    })
+    // })
 
-    it('Test om getProdukt() virker', () => {
+    it('Test om getProducts() virker', () => {
         
-        getProdukt().should.exist
-        getProdukt().should.not.be.undefined
-
+        getProducts().should.exist
+        getProducts().should.not.be.undefined
+        getProducts().should.not.be.null
+                
+        // getProducts().should.have.property('name', 'Klosterbryg')
     })
 
     it('Test om getProduct() virker', () => {
-  
-        getProduct('5dde402dc727df064791331a').should.exist
-        getProduct('5dde402dc727df064791331a').should.not.be.undefined
+        //5de6277ee661bf27f82795e6 - Klosterbyg
+        getProduct('5de6277ee661bf27f82795e6').should.exist
+        getProduct('5de6277ee661bf27f82795e6').should.not.be.undefined
+        getProduct('5de6277ee661bf27f82795e6').should.not.be.null
+        // getProduct('5de6277ee661bf27f82795e6').should.have.property('name')
 
     })
 
