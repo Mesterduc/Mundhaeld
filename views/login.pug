@@ -5,12 +5,13 @@ block content
 	//- Menu bar
 	- var current = "Login"
 	include template/nav
-
+	br
 	div(class="login")
-		h1 Login
+		h1 Log ind
 		form(action="/login" method="POST")
-			p Username
+			p Brugernavn
 			input#bruger(type="text" name="username")
-			p Password
+			p Kodeord
 			input#adgang(type="password" name="password")
+			br
 			input#login(type="submit" value="login")

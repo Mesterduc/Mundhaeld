@@ -8,10 +8,9 @@ body {
   text-decoration: none;
   color: rgba(217, 217, 217, 1);
   letter-spacing: normal;
-  
 }
 ul {
-	list-style-type: none;	
+  list-style-type: none;
 }
 /* ----------------------------- Menu ------------------------------*/
 
@@ -163,13 +162,16 @@ textarea:valid {
   width: 200px;
 }
 
-.edit-product-container #name, #alcoholP, #price, #desciption{
+.edit-product-container #name,
+#alcoholP,
+#price,
+#desciption {
   align-content: center;
   width: 100%;
 }
 
 #gemBtn {
-  float:left;
+  float: left;
 }
 
 #tilbageBtn {
@@ -321,6 +323,13 @@ textarea:valid {
     margin-top: -25px;
   }
 }
+/* --------------------------- Login -----------------------------*/
+.login {
+  width: 500;
+text-align: center;  margin: 0 auto;
+  
+}
+
 /* --------------------------- Sortiment -----------------------------*/
 
 .admincontainer {
