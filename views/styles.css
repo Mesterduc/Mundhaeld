@@ -8,6 +8,10 @@ body {
   text-decoration: none;
   color: rgba(217, 217, 217, 1);
   letter-spacing: normal;
+  
+}
+ul {
+	list-style-type: none;	
 }
 /* ----------------------------- Menu ------------------------------*/
 
@@ -27,28 +31,27 @@ body {
   color: #800000;
 }
 
-#respmenu{
-  margin:0;
+#respmenu {
+  margin: 0;
   position: fixed;
   visibility: hidden;
   width: 10%;
   height: auto;
-  
 }
-#respdiv{
+#respdiv {
   position: fixed;
   visibility: hidden;
   display: none;
   width: auto;
   height: auto;
   background-color: black;
-  border-radius: 20px;  
+  border-radius: 20px;
 }
 
-#respul{
+#respul {
   list-style-type: none;
 }
-#respcontent{
+#respcontent {
   position: relative;
   left: -30%;
 }
@@ -109,7 +112,6 @@ li a {
   color: #800000;
 }
 
-
 .grid-container {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -119,7 +121,6 @@ li a {
 .grid-container-info input:valid {
   border: 3px solid green;
   border-radius: 5px;
-  
 }
 
 input::-webkit-outer-spin-button,
@@ -128,7 +129,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.grid-container input:invalid, textarea:valid {
+.grid-container input:invalid,
+textarea:valid {
   border: 3px solid gray;
   border-radius: 5px;
 }
@@ -143,7 +145,6 @@ input::-webkit-inner-spin-button {
 
 .grid-container-info {
   grid-column-start: 2;
-  
 }
 .grid-container-info2 {
   grid-column-start: 3;
@@ -176,12 +177,12 @@ input::-webkit-inner-spin-button {
 @media only screen and (max-width: 950px) {
   /* lille skærm */
   #respmenu {
-  visibility: visible;
-  width: 10%;
-  height: auto;
+    visibility: visible;
+    width: 10%;
+    height: auto;
   }
 
-  #menu{
+  #menu {
     visibility: hidden;
   }
 
@@ -199,27 +200,27 @@ input::-webkit-inner-spin-button {
 }
 /* Mellem skærm */
 @media only screen and (max-width: 950px) {
-    .product_name_A {
+  .product_name_A {
     margin-left: -70px;
   }
 }
 
 @media only screen and (min-width: 950px) {
   /* stor skærm */
-  #respmenu{
+  #respmenu {
     visibility: hidden;
     width: 0%;
     height: auto;
   }
 
-  #respdiv{
+  #respdiv {
     display: none;
     visibility: hidden;
     width: 0%;
     height: auto;
   }
 
-  #menu{
+  #menu {
     visibility: visible;
   }
   .container_product {
@@ -356,8 +357,8 @@ input::-webkit-inner-spin-button {
 }
 /* ---------------------------------------- Admin ------------------------------------*/
 .admin {
-    text-align: center;
-    margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
 .form {
   position: relative;
@@ -368,64 +369,61 @@ input::-webkit-inner-spin-button {
   left: 25%;
 }
 
-.form input{
-    width: 100%;
-    height: 100%;
-    padding-top: 20px;
-    border: none;
-    background: rgba(0, 0, 0, 0);
-    outline: none;
-    color: aliceblue;
+.form input {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  color: aliceblue;
 }
-.form label{
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 1px solid whitesmoke;
+.form label {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid whitesmoke;
 }
-
 
 .input_navn {
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
-    transition: all 0.3s ease;
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
 }
 
 .form label::after {
-    content: "";
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    height: 100%;
-    width: 100%;
-    border-bottom: 3px solid #128112;
-    transform: translateX(-100%);
-    transition: all 0.4s ease;
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #128112;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
 }
 .form input:focus + .label_navn .input_navn,
 .form input:valid + .label_navn .input_navn {
-    transform: translateY(-150%);
-    font-size: 15px;
-    color: #128112;
+  transform: translateY(-150%);
+  font-size: 15px;
+  color: #128112;
 }
 .form input:invalid + .label_navn .input_navn {
-    transform: translateY(-150%);
-    font-size: 15px;
-    color: red;
+  transform: translateY(-150%);
+  font-size: 15px;
+  color: red;
 }
 
-.form input:valid + .label_navn::after{
-transform: translateX(0%);
+.form input:valid + .label_navn::after {
+  transform: translateX(0%);
 }
 
 .admin textarea {
-    width: 350px;
-    height: 150px;
+  width: 350px;
+  height: 150px;
 }
-
-

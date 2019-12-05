@@ -4,23 +4,19 @@ const session = require('express-session')
 const pug = require('pug')
 app.set('view engine', 'pug')
 app.use(express.json())
-app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 18000000 } }))
 const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 
 //Session opsætning
-function checkAuth (req, res, next) {
-	console.log('checkAuth ' + req.url);
-
-	// don't serve /secure to those not logged in
-	// you should add to this list, for each and every secure url
+function checkAuth(req, res, next) {
 	if (req.url === '/admin' && (!req.session || !req.session.authenticated)) {
 		res.render('login', { status: 403 });
 		return;
-  }
-  if (req.url === '/adminSortiment' && (!req.session || !req.session.authenticated)) {
+	}
+	if (req.url === '/adminSortiment' && (!req.session || !req.session.authenticated)) {
 		res.render('login', { status: 403 });
 		return;
 	}
@@ -35,10 +31,10 @@ app.use(checkAuth);
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://dbNissen:bajer123@mundhaeld-nshjk.mongodb.net/test?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  autoIndex: false,
-  useUnifiedTopology: true
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	autoIndex: false,
+	useUnifiedTopology: true
 }).catch(error => handleError(error));
 
 // Routes
