@@ -56,7 +56,11 @@ app.use(express.static('public'))
 
 //Redirect hvis url'en er forket - Altså 404-fejl
 app.use(function(req,res){
-    res.status(404).redirect('/forside')
+	if (req.session.authenticated === true) {
+        res.redirect("../adminsortiment")
+    } else{
+	res.status(404).redirect('/forside')
+	}
 });
 
 app.listen(8000);

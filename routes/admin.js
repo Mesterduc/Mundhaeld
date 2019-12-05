@@ -28,7 +28,7 @@ router.post('/adminRedigere/:id', (req, res) => {
 // opdaterer produktet og redirecter til 'admin/sortiment'
 router.post('/admin/edit/:id', (req, res)=> {
     controller.editProduct(req)
-    res.redirect('/admin/sortiment')
+    res.redirect('/adminsortiment')
 })
 
 // Kalder controllerens createProduct funktion

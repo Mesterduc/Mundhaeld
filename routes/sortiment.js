@@ -4,9 +4,15 @@ const controller = require('../controllers/product')
 
 // Henter alle produkter og render sortiment
 router.get('/sortiment', (req, res) => {
-    let product = controller.getProducts().then(data => {
-        return res.render("sortiment", {product: data});
-    })
+    if (req.session.authenticated === true) {
+        res.redirect("./adminsortiment")
+    } else{
+        let product = controller.getProducts().then(data => {
+            return res.render("sortiment", {product: data});
+        })
+
+    }
+
 });
 
 // Henter alle produkter og render sortimentAdmin
