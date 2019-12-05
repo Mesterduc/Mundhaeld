@@ -12,11 +12,13 @@ app.use(bodyParser.json())
 
 //Session opsætning
 function checkAuth(req, res, next) {
-	if (req.url === '/admin' && (!req.session || !req.session.authenticated)) {
+	let side = req.url.toLowerCase();
+	
+	if (side === '/admin' && (!req.session || !req.session.authenticated)) {
 		res.render('login', { status: 403 });
 		return;
 	}
-	if (req.url === '/adminSortiment' && (!req.session || !req.session.authenticated)) {
+	if (side == '/adminsortiment' && (!req.session || !req.session.authenticated)) {
 		res.render('login', { status: 403 });
 		return;
 	}
