@@ -22,13 +22,10 @@ block content
                 input#price(type='text' name='price' required)
                 label(class="label_navn")
                         span(class="input_navn") Pris
-
             br
-            label Beskrivelse
-            br
-            textarea#desciption(type='text' name='desciption' cols="30", rows="5")
+            div.deciptionWrapper
+                textarea#desciption(placeholder="Beskrivelse" type='text' name='desciption' cols="30", rows="5" required)
             //- //- span Beskrivelse
-            br
             br
             input(type='Submit' value='Opret')
 
