@@ -178,6 +178,16 @@ textarea:valid {
   float: right;
 }
 
+#tilbageAdminBtn {
+  width: 10%;
+  font-size: 16px;
+  align-content: center;
+  float: right;
+
+  /* margin: 0 auto;
+  display: block; */
+}
+
 @media only screen and (max-width: 950px) {
   /* lille skærm */
   .grid-container {
@@ -326,8 +336,8 @@ textarea:valid {
 /* --------------------------- Login -----------------------------*/
 .login {
   width: 500;
-text-align: center;  margin: 0 auto;
-  
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* --------------------------- Sortiment -----------------------------*/
@@ -444,7 +454,26 @@ text-align: center;  margin: 0 auto;
   transform: translateX(0%);
 }
 
+.deciptionWrapper {
+  width: 50%;
+  margin: 2 auto;
+}
+#textlabel {
+  margin: 0%;
+}
+
 .admin textarea {
-  width: 350px;
   height: 150px;
+  background: transparent;
+  color: white;
+}
+
+.deciptionWrapper textarea:required {
+  border-color: red;
+}
+
+.deciptionWrapper textarea:valid{
+  transition: all 0.4s ease;
+  border-color: green;
+  border-width: 5px;
 }
