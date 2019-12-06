@@ -15,6 +15,19 @@ exports.createProduct = function(req,res){
         if(err){return handleError(err)}
     });
  }
+/* TEST METODE
+ exports.createProduct = function(name, alkoP, pris, description) {
+    let product = new Product({})
+        product._id = new mongoose.Types.ObjectId(),
+        product.name = name,
+        product.alcoholP = alkoP,
+        product.price = pris,
+        product.desciption = description
+
+    product.save((err)=>{
+        if(err){return handleError(err)}
+    });
+ } */
 
  // sletter et produkt, som kaster en error hvis produktet ikke kan findes i mongodb
  exports.deleteProduct = function(id){
@@ -39,6 +52,19 @@ exports.createProduct = function(req,res){
         }
     })
  }
+/* TEST METODE
+ exports.editProduct = function(id, name, alkoP, pris, description){
+    let tempProduct = {};
+    tempProduct.name = name;
+    tempProduct.alcoholP = alkoP;
+    tempProduct.price = pris;
+    tempProduct.desciption = description;
+
+    let oldProduct = {_id: id};
+
+    Product.updateOne(oldProduct, tempProduct, function(){
+    })
+ }*/
 
  // Finder ét produkt ud fra produkt ID
 exports.getProduct = function(productID){
