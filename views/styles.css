@@ -178,15 +178,12 @@ textarea:valid {
   float: right;
 }
 
-#tilbageAdminBtn {
-  width: 10%;
-  font-size: 16px;
-  align-content: center;
-  float: right;
+.addbutton{
 
-  /* margin: 0 auto;
-  display: block; */
+margin-left: 50%;
+margin-right: auto;
 }
+
 
 @media only screen and (max-width: 950px) {
   /* lille skærm */

@@ -28,7 +28,9 @@ block content
                         input(class="sletKnap" src="/trash.png" type='image')
                     form(action="/adminRedigere/" + p._id method="POST")
                         input(class="sletKnap" src="/redigere.png" type='image')
-    input(id="tilbageAdminBtn" type='button' onclick="location.href='/admin'" value="+")
+    div.addbutton
+        a(href="/admin")
+            img(src="https://img.icons8.com/pastel-glyph/64/000000/plus.png")
 
             
 
