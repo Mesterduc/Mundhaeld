@@ -178,6 +178,11 @@ textarea:valid {
   float: right;
 }
 
+#tilbageAdminBtn {
+  margin-bottom: 2%;
+  text-align: center;
+}
+
 @media only screen and (max-width: 950px) {
   /* lille skærm */
   .grid-container {
