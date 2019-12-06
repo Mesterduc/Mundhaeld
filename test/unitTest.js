@@ -19,7 +19,7 @@ describe('Test', function() {
         let testProduct = createProduct('testProdukt', '10', '50/25', 'dette er en test');
 
         // Find produkt id'et på atlas.
-        let result = await getProduct('5dea3ebdf41e4f2e58d9318c');
+        let result = await getProduct('5dea4555d84e40382467b88e');
         result.name.should.be.equal('testProdukt');
         result.alcoholP.should.be.equal(10);
         result.price.should.be.equal('50/25');
